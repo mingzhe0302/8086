@@ -2,7 +2,7 @@
 .stack 100
 .data
 
-a db 0dh, 0ah, "This is my first debug program!"
+a db 0dh, 0ah, "This is Tan Jee Schuan's debug program!"
 b db 0dh, 0ah,"$"
 
 .code
