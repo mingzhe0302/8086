@@ -1,0 +1,85 @@
+Microsoft (R) Macro Assembler Version 5.00                  8/6/23 01:13:14
+                                                             Page     1-1
+
+
+       1				.model small 
+       2 0064				.stack 100 
+       3 0000				.data 
+       4				 
+       5 0000  61			val1 DB 'a' 
+       6 0001  2C			comma DB ',' 
+       7 0002  41			result DB 'A' 
+       8				 
+       9 0000				.code 
+      10 0000				main proc 
+      11 0000  B8 ---- R		mov ax,@data 
+      12 0003  8E D8			mov ds,ax 
+      13				 
+      14				 ; Initialize the data segment 
+      15 0005  B8 ---- R		    MOV AX, @DATA 
+      16 0008  8E D8			    MOV DS, AX 
+      17				 
+      18				    ; Convert 'a' to 'A' 
+      19 000A  80 2E 0000 R 20		    SUB val1, 32   ; ASCII 'a' - 32 = A
+					SCII 'A' 
+      20				 
+      21				    ; Print "a" 
+      22 000F  B4 02			    MOV AH, 02H 
+      23 0011  B2 61			    MOV DL, 'a' 
+      24 0013  CD 21			    INT 21H 
+      25				 
+      26				    ; Print "," 
+      27 0015  B4 02			    MOV AH, 02H 
+      28 0017  8A 16 0001 R		    MOV DL, comma 
+      29 001B  CD 21			    INT 21H 
+      30				 
+      31				    ; Print "A" 
+      32 001D  B4 02			    MOV AH, 02H 
+      33 001F  8A 16 0002 R		    MOV DL, result 
+      34 0023  CD 21			    INT 21H 
+      35				 
+      36				 
+      37 0025  B8 4C00			mov ax, 4c00h 
+      38 0028  CD 21			int 21h 
+      39				 
+      40 002A				main endp 
+      41 002A				end main 
+Microsoft (R) Macro Assembler Version 5.00                  8/6/23 01:13:14
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+DGROUP . . . . . . . . . . . . .  	GROUP
+  _DATA  . . . . . . . . . . . .  	0003	WORD	PUBLIC	'DATA'
+  STACK  . . . . . . . . . . . .  	0064	PARA	STACK	'STACK'
+_TEXT  . . . . . . . . . . . . .  	002A	WORD	PUBLIC	'CODE'
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+COMMA  . . . . . . . . . . . . .  	L BYTE	0001	_DATA
+
+MAIN . . . . . . . . . . . . . .  	N PROC	0000	_TEXT	Length = 002A
+
+RESULT . . . . . . . . . . . . .  	L BYTE	0002	_DATA
+
+VAL1 . . . . . . . . . . . . . .  	L BYTE	0000	_DATA
+
+@CODE  . . . . . . . . . . . . .  	TEXT  _TEXT		
+@CODESIZE  . . . . . . . . . . .  	TEXT  0		
+@DATASIZE  . . . . . . . . . . .  	TEXT  0		
+@FILENAME  . . . . . . . . . . .  	TEXT  convert		
+
+
+     41 Source  Lines
+     41 Total   Lines
+     18 Symbols
+
+  50568 + 465976 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors

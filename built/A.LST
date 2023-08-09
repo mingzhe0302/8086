@@ -1,0 +1,74 @@
+Microsoft (R) Macro Assembler Version 5.00                  7/29/23 14:23:30
+                                                             Page     1-1
+
+
+       1				.model small 
+       2 0064				.stack 100 
+       3 0000				.data 
+       4				 
+       5 0000  010A			w dw 010ah 
+       6 0002  0D 0A 54 68 69 73 20	a db 0dh, 0ah, "This is my first debug 
+					program!" 
+       7       69 73 20 6D 79 20 66	
+       8       69 72 73 74 20 64 65	
+       9       62 75 67 20 70 72 6F	
+      10       67 72 61 6D 21		
+      11 0023  0D 0A 24			b db 0dh, 0ah,"$" 
+      12				 
+      13 0000				.code 
+      14 0000				main proc 
+      15 0000  B8 ---- R		mov ax,@data 
+      16 0003  8E D8			mov ds,ax 
+      17				 
+      18 0005  B4 09			mov ah,9 
+      19 0007  8B 16 0002 R		mov dx, a 
+a.asm(15): warning A4031: Operand types must match
+      20 000B  CD 21			int 21h 
+      21				 
+      22				 
+      23				 
+      24				 
+      25 000D  B8 4C00			mov ax,4c00h 
+      26 0010  CD 21			int 21h 
+      27				 
+      28 0012				main endp 
+      29 0012				end main 
+Microsoft (R) Macro Assembler Version 5.00                  7/29/23 14:23:30
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+DGROUP . . . . . . . . . . . . .  	GROUP
+  _DATA  . . . . . . . . . . . .  	0026	WORD	PUBLIC	'DATA'
+  STACK  . . . . . . . . . . . .  	0064	PARA	STACK	'STACK'
+_TEXT  . . . . . . . . . . . . .  	0012	WORD	PUBLIC	'CODE'
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+A  . . . . . . . . . . . . . . .  	L BYTE	0002	_DATA
+
+B  . . . . . . . . . . . . . . .  	L BYTE	0023	_DATA
+
+MAIN . . . . . . . . . . . . . .  	N PROC	0000	_TEXT	Length = 0012
+
+W  . . . . . . . . . . . . . . .  	L WORD	0000	_DATA
+
+@CODE  . . . . . . . . . . . . .  	TEXT  _TEXT		
+@CODESIZE  . . . . . . . . . . .  	TEXT  0		
+@DATASIZE  . . . . . . . . . . .  	TEXT  0		
+@FILENAME  . . . . . . . . . . .  	TEXT  a		
+
+
+     25 Source  Lines
+     25 Total   Lines
+     18 Symbols
+
+  50622 + 465922 Bytes symbol space free
+
+      1 Warning Errors
+      0 Severe  Errors

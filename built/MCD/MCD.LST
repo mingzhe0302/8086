@@ -1,0 +1,2515 @@
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-1
+
+
+       1				TITLE	 Food & Beverage Ordering Syste
+					m		; TITLE directive 
+       2				 
+       3				.MODEL	SMALL			
+									; decla
+					re the memory model used (SMALL) 
+       4 0040				.STACK	64			
+									; decla
+					re STACK segment 
+       5 0000				.DATA				
+									; decla
+					re DATA segment 
+       6				 
+       7					; Header DATA segment  
+       8					; -----------------------------
+					---------------------------------------
+					---------------------------------------
+					-- 
+       9 0000  0A 0D 09 09 09 2B 3D		HEADER1	DB	10 , 13 , "
+								+==============
+					==============+ $"  
+      10       3D 3D 3D 3D 3D 3D 3D	
+      11       3D 3D 3D 3D 3D 3D 3D	
+      12       3D 3D 3D 3D 3D 3D 3D	
+      13       3D 3D 3D 3D 3D 3D 2B	
+      14       20 24			
+      15 0025  0A 0D 09 09 09 7C 20		HEADER2	DB	10 , 13 , "
+								|  McDonald Ord
+					ering System  | $"  
+      16       20 4D 63 44 6F 6E 61	
+      17       6C 64 20 4F 72 64 65	
+      18       72 69 6E 67 20 53 79	
+      19       73 74 65 6D 20 20 7C	
+      20       20 24			
+      21 004A  0A 0D 09 09 09 7C 20		HEADER3	DB 	10 , 13 , "
+								|        Since 
+					1940          | $" 
+      22       20 20 20 20 20 20 20	
+      23       53 69 6E 63 65 20 31	
+      24       39 34 30 20 20 20 20	
+      25       20 20 20 20 20 20 7C	
+      26       20 24			
+      27 006F  0A 0D 09 09 09 7C 20		HEADER4	DB	10 , 13 , "
+								| Operational H
+					ours: 8AM-8PM | $" 
+      28       4F 70 65 72 61 74 69	
+      29       6F 6E 61 6C 20 48 6F	
+      30       75 72 73 3A 20 38 41	
+      31       4D 2D 38 50 4D 20 7C	
+      32       20 24			
+      33 0094  0A 0D 09 09 09 2B 3D		HEADER5	DB	10 , 13 , "
+								+==============
+					==============+ $" 
+      34       3D 3D 3D 3D 3D 3D 3D	
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-2
+
+
+      35       3D 3D 3D 3D 3D 3D 3D	
+      36       3D 3D 3D 3D 3D 3D 3D	
+      37       3D 3D 3D 3D 3D 3D 2B	
+      38       20 24			
+      39 00B9  0A 0D 20 09 09 09 47		HEADER6	DB	10 , 13 , " 
+								Good to see you
+					 here! Welcome! $" 
+      40       6F 6F 64 20 74 6F 20	
+      41       73 65 65 20 79 6F 75	
+      42       20 68 65 72 65 21 20	
+      43       57 65 6C 63 6F 6D 65	
+      44       21 20 24			
+      45 00DF  0A 0D 09 20 09 20 20		HEADER7	DB	10 , 13 , "
+						 	       ................
+					................ $" 
+      46       20 20 20 20 20 2E 2E	
+      47       2E 2E 2E 2E 2E 2E 2E	
+      48       2E 2E 2E 2E 2E 2E 2E	
+      49       2E 2E 2E 2E 2E 2E 2E	
+      50       2E 2E 2E 2E 2E 2E 2E	
+      51       2E 2E 20 24		
+      52				 
+      53				 
+      54					; Advertisement module DATA seg
+					ment  
+      55					; -----------------------------
+					---------------------------------------
+					---------------------------------------
+					-- 
+      56 010D  0A 0D 20 09 54 68 65		ADV		DB	10 , 13
+					 , " 	The following is the advertisem
+					ent of the day....$" 
+      57       20 66 6F 6C 6C 6F 77	
+      58       69 6E 67 20 69 73 20	
+      59       74 68 65 20 61 64 76	
+      60       65 72 74 69 73 65 6D	
+      61       65 6E 74 20 6F 66 20	
+      62       74 68 65 20 64 61 79	
+      63       2E 2E 2E 2E 24		
+      64 0143  0A 0D 20 09 2D 2D 2D		ADV1		DB	10 , 13
+					 , " 	-------------------------------
+					-------------------------------$" 
+      65       2D 2D 2D 2D 2D 2D 2D	
+      66       2D 2D 2D 2D 2D 2D 2D	
+      67       2D 2D 2D 2D 2D 2D 2D	
+      68       2D 2D 2D 2D 2D 2D 2D	
+      69       2D 2D 2D 2D 2D 2D 2D	
+      70       2D 2D 2D 2D 2D 2D 2D	
+      71       2D 2D 2D 2D 2D 2D 2D	
+      72       2D 2D 2D 2D 2D 2D 2D	
+      73       2D 2D 2D 24		
+      74 0186  0A 0D 20 09 7C 09 09		ADV2		DB	10 , 13
+					 , " 	|			
+									     |$
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-3
+
+
+					" 
+      75       09 09 09 09 09 20 20	
+      76       20 20 20 7C 24		
+      77 0199  0A 0D 20 09 7C 09 41		ADV3		DB	10 , 13
+					 , " 	|	AWESOME!!!! We have spe
+					cial meal today!!! 	     |$" 
+      78       57 45 53 4F 4D 45 21	
+      79       21 21 21 20 57 65 20	
+      80       68 61 76 65 20 73 70	
+      81       65 63 69 61 6C 20 6D	
+      82       65 61 6C 20 74 6F 64	
+      83       61 79 21 21 21 20 09	
+      84       20 20 20 20 20 7C 24	
+      85 01D1  0A 0D 20 09 7C 09 09		ADV4		DB	10 , 13
+					 , " 	|		We have special
+					 meal this week!!!  	     |$" 
+      86       57 65 20 68 61 76 65	
+      87       20 73 70 65 63 69 61	
+      88       6C 20 6D 65 61 6C 20	
+      89       74 68 69 73 20 77 65	
+      90       65 6B 21 21 21 20 20	
+      91       09 20 20 20 20 20 7C	
+      92       24			
+      93 0203  0A 0D 20 09 7C 20 54		ADV5		DB	10 , 13
+					 , " 	| There are Spicy McChicken Del
+					uxe Meal and Oreo McFlurry!!!!|$" 
+      94       68 65 72 65 20 61 72	
+      95       65 20 53 70 69 63 79	
+      96       20 4D 63 43 68 69 63	
+      97       6B 65 6E 20 44 65 6C	
+      98       75 78 65 20 4D 65 61	
+      99       6C 20 61 6E 64 20 4F	
+     100       72 65 6F 20 4D 63 46	
+     101       6C 75 72 72 79 21 21	
+     102       21 21 7C 24		
+     103 0246  0A 0D 20 09 7C 09 09		ADV6		DB	10 , 13
+					 , " 	|			
+									     |$
+					" 
+     104       09 09 09 09 09 20 20	
+     105       20 20 20 7C 24		
+     106 0259  0A 0D 20 09 7C 2D 2D		ADV7		DB	10 , 13
+					 , " 	|------------------------------
+					------------------------------|$" 
+     107       2D 2D 2D 2D 2D 2D 2D	
+     108       2D 2D 2D 2D 2D 2D 2D	
+     109       2D 2D 2D 2D 2D 2D 2D	
+     110       2D 2D 2D 2D 2D 2D 2D	
+     111       2D 2D 2D 2D 2D 2D 2D	
+     112       2D 2D 2D 2D 2D 2D 2D	
+     113       2D 2D 2D 2D 2D 2D 2D	
+     114       2D 2D 2D 2D 2D 2D 2D	
+     115       2D 2D 7C 24		
+     116 029C  0A 0D 20 09 7C 20 46		ADV8		DB	10 , 13
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-4
+
+
+					 , " 	| Frequently asked question:   
+					                              |$" 
+     117       72 65 71 75 65 6E 74	
+     118       6C 79 20 61 73 6B 65	
+     119       64 20 71 75 65 73 74	
+     120       69 6F 6E 3A 20 20 20	
+     121       20 20 20 20 20 20 20	
+     122       20 20 20 20 20 20 20	
+     123       20 20 20 20 20 20 20	
+     124       20 20 20 20 20 20 20	
+     125       20 20 7C 24		
+     126 02DF  0A 0D 20 09 7C 20 51		ADV9		DB	10 , 13
+					 , " 	| Q: Can I ask if the meal incl
+					udes drinks and french fries? |$" 
+     127       3A 20 43 61 6E 20 49	
+     128       20 61 73 6B 20 69 66	
+     129       20 74 68 65 20 6D 65	
+     130       61 6C 20 69 6E 63 6C	
+     131       75 64 65 73 20 64 72	
+     132       69 6E 6B 73 20 61 6E	
+     133       64 20 66 72 65 6E 63	
+     134       68 20 66 72 69 65 73	
+     135       3F 20 7C 24		
+     136 0322  0A 0D 20 09 7C 20 41		ADV10		DB	10 , 13
+					 , " 	| A: Sorry, the meal is not inc
+					luded.                        |$" 
+     137       3A 20 53 6F 72 72 79	
+     138       2C 20 74 68 65 20 6D	
+     139       65 61 6C 20 69 73 20	
+     140       6E 6F 74 20 69 6E 63	
+     141       6C 75 64 65 64 2E 20	
+     142       20 20 20 20 20 20 20	
+     143       20 20 20 20 20 20 20	
+     144       20 20 20 20 20 20 20	
+     145       20 20 7C 24		
+     146 0365  0A 0D 20 09 7C 20 51		ADV11		DB	10 , 13
+					 , " 	| Q: Can I change the flavour o
+					f McFlurry?		     |$" 
+     147       3A 20 43 61 6E 20 49	
+     148       20 63 68 61 6E 67 65	
+     149       20 74 68 65 20 66 6C	
+     150       61 76 6F 75 72 20 6F	
+     151       66 20 4D 63 46 6C 75	
+     152       72 72 79 3F 09 09 20	
+     153       20 20 20 20 7C 24	
+     154 039C  0A 0D 20 09 7C 20 41		ADV12		DB	10 , 13
+					 , " 	| A: Sorry, the flavour is unch
+					angeable.		     |$" 
+     155       3A 20 53 6F 72 72 79	
+     156       2C 20 74 68 65 20 66	
+     157       6C 61 76 6F 75 72 20	
+     158       69 73 20 75 6E 63 68	
+     159       61 6E 67 65 61 62 6C	
+     160       65 2E 09 09 20 20 20	
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-5
+
+
+     161       20 20 7C 24		
+     162 03D1  0A 0D 20 09 7C 3C 2D		ADV13		DB	10 , 13
+					 , " 	|<---------Hope you all the bes
+					t and happy every day-------->|$" 
+     163       2D 2D 2D 2D 2D 2D 2D	
+     164       2D 48 6F 70 65 20 79	
+     165       6F 75 20 61 6C 6C 20	
+     166       74 68 65 20 62 65 73	
+     167       74 20 61 6E 64 20 68	
+     168       61 70 70 79 20 65 76	
+     169       65 72 79 20 64 61 79	
+     170       2D 2D 2D 2D 2D 2D 2D	
+     171       2D 3E 7C 24		
+     172 0414  0A 0D 20 09 2D 2D 2D		ADV14		DB	10 , 13
+					 , " 	-------------------------------
+					-------------------------------$" 
+     173       2D 2D 2D 2D 2D 2D 2D	
+     174       2D 2D 2D 2D 2D 2D 2D	
+     175       2D 2D 2D 2D 2D 2D 2D	
+     176       2D 2D 2D 2D 2D 2D 2D	
+     177       2D 2D 2D 2D 2D 2D 2D	
+     178       2D 2D 2D 2D 2D 2D 2D	
+     179       2D 2D 2D 2D 2D 2D 2D	
+     180       2D 2D 2D 2D 2D 2D 2D	
+     181       2D 2D 2D 24		
+     182 0457  0A 0D 20 09 50 72 65		TXT		DB	10 , 13
+					 , " 	Press any key to continue ...$"
+					 
+     183       73 73 20 61 6E 79 20	
+     184       6B 65 79 20 74 6F 20	
+     185       63 6F 6E 74 69 6E 75	
+     186       65 20 2E 2E 2E 24	
+     187 0479  ??				CONT		DB	? 
+     188				 
+     189				 
+     190					; Login module DATA segment  
+     191					; -----------------------------
+					---------------------------------------
+					---------------------------------------
+					-- 
+     192 047A  0A 0D 50 6C 65 61 73		USER_ID	DB	10,13,"Please e
+					nter USER ID: $" 
+     193       65 20 65 6E 74 65 72	
+     194       20 55 53 45 52 20 49	
+     195       44 3A 20 24		
+     196 0493  0A 0D 49 6E 76 61 6C		INVALID	DB	10,13,"Invalid 
+					User ID !!! $" 
+     197       69 64 20 55 73 65 72	
+     198       20 49 44 20 21 21 21	
+     199       20 24			
+     200 04AA  0A 0D 4C 6F 67 69 6E		VALID	DB	10,13,"Login Su
+					ccessful ! $" 
+     201       20 53 75 63 63 65 73	
+     202       73 66 75 6C 20 21 20	
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-6
+
+
+     203       24			
+     204 04C0  0005[				IN_USERID	DB	5 DUP(?
+					) 
+     205	    ??			
+     206			 ]	
+     207				
+     208					 
+     209				 
+     210					; Payment module DATA segment  
+     211					; -----------------------------
+					---------------------------------------
+					---------------------------------------
+					-- 
+     212					; Menu Format 
+     213					; ----------------------- 
+     214 04C5  0A 0D 3C 3C 3C 3C 3C		MSECTION1	DB 	10 , 13
+					 , "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< F
+					ood Menu >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+					>>>" , 10 , 13 , "$"	 
+     215       3C 3C 3C 3C 3C 3C 3C	
+     216       3C 3C 3C 3C 3C 3C 3C	
+     217       3C 3C 3C 3C 3C 3C 3C	
+     218       3C 3C 3C 3C 3C 3C 3C	
+     219       20 46 6F 6F 64 20 4D	
+     220       65 6E 75 20 3E 3E 3E	
+     221       3E 3E 3E 3E 3E 3E 3E	
+     222       3E 3E 3E 3E 3E 3E 3E	
+     223       3E 3E 3E 3E 3E 3E 3E	
+     224       3E 3E 3E 3E 3E 3E 3E	
+     225       3E 3E 0A 0D 24		
+     226 0517  09 20 20 20 20 09 20		MSECTION2	DB 	"
+						    	 MEAL		     
+						      Price (RM) " , 10 , 13 , 
+					"$" 
+     227       4D 45 41 4C 09 09 20	
+     228       20 20 20 20 09 20 20	
+     229       20 20 20 20 50 72 69	
+     230       63 65 20 28 52 4D 29	
+     231       20 0A 0D 24		
+     232 053E  09 2D 2D 2D 2D 2D 2D		MSECTION3 	DB	"
+						------------------------------ 
+					     -------------" , 10, 13 , "$"
+							  
+     233       2D 2D 2D 2D 2D 2D 2D	
+     234       2D 2D 2D 2D 2D 2D 2D	
+     235       2D 2D 2D 2D 2D 2D 2D	
+     236       2D 2D 2D 20 20 20 20	
+     237       20 20 2D 2D 2D 2D 2D	
+     238       2D 2D 2D 2D 2D 2D 2D	
+     239       2D 0A 0D 24		
+     240 0573  09 31 2E 20 46 69 6C		MNAME1		DB 	"
+						1. Filet-O-Fish Meal	
+						   	RM 15" , 10 , 13 , "$" 
+     241       65 74 2D 4F 2D 46 69	
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-7
+
+
+     242       73 68 20 4D 65 61 6C	
+     243       09 09 20 20 20 09 52	
+     244       4D 20 31 35 0A 0D 24	
+     245 0596  09 32 2E 20 53 70 69		MNAME2		DB 	"
+						2. Spicy McChicken Deluxe Meal
+						    	RM 19" , 10 , 13 , "$" 
+     246       63 79 20 4D 63 43 68	
+     247       69 63 6B 65 6E 20 44	
+     248       65 6C 75 78 65 20 4D	
+     249       65 61 6C 09 20 20 20	
+     250       20 09 52 4D 20 31 39	
+     251       0A 0D 24			
+     252 05C3  09 33 2E 20 44 6F 75		MNAME3		DB 	"
+						3. Double Cheeseburger Meal
+							RM 17" , 10 , 13 , "$" 
+     253       62 6C 65 20 43 68 65	
+     254       65 73 65 62 75 72 67	
+     255       65 72 20 4D 65 61 6C	
+     256       09 09 52 4D 20 31 37	
+     257       0A 0D 24			
+     258 05E9  09 34 2E 20 53 6D 6F		MNAME4		DB 	"
+						4. Smoky Grilled Beef Meal
+							RM 20" , 10 , 13 , "$" 
+     259       6B 79 20 47 72 69 6C	
+     260       6C 65 64 20 42 65 65	
+     261       66 20 4D 65 61 6C 09	
+     262       09 52 4D 20 32 30 0A	
+     263       0D 24			
+     264 060E  09 35 2E 20 4F 72 65		MNAME5		DB 	"
+						5. Oreo McFlurry	
+							RM  7" , 10 , 13 , "$" 
+     265       6F 20 4D 63 46 6C 75	
+     266       72 72 79 09 09 09 52	
+     267       4D 20 20 37 0A 0D 24	
+     268 062A  20 09 36 2E 20 41 70		MNAME6		DB 	" 
+						6. Apple Pie		
+						    	RM  4" , 10 , 13 , "$" 
+     269       70 6C 65 20 50 69 65	
+     270       09 09 09 20 20 20 20	
+     271       09 52 4D 20 20 34 0A	
+     272       0D 24			
+     273 0648  0A 0D 3C 3C 3C 3C 3C		CSECTION1	DB 	10 , 13
+					 , "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Cus
+					tomize Menu >>>>>>>>>>>>>>>>>>>>>>>>>>>
+					>>>>" , 10 , 13 , "Do You Want V
+     274       3C 3C 3C 3C 3C 3C 3C	
+     275       3C 3C 3C 3C 3C 3C 3C	
+     276       3C 3C 3C 3C 3C 3C 3C	
+     277       3C 3C 3C 3C 3C 20 43	
+     278       75 73 74 6F 6D 69 7A	
+     279       65 20 4D 65 6E 75 20	
+     280       3E 3E 3E 3E 3E 3E 3E	
+     281       3E 3E 3E 3E 3E 3E 3E	
+     282       3E 3E 3E 3E 3E 3E 3E	
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-8
+
+
+     283       3E 3E 3E 3E 3E 3E 3E	
+     284       3E 3E 3E 0A 0D 44 6F	
+     285       20 59 6F 75 20 57 61	
+     286       6E 74 20 56 65 67 65	
+     287       74 61 62 6C 65 20 3F	
+     288       20 28 59 20 3D 20 59	
+     289       45 53 20 7C 7C 20 4E	
+     290       20 3D 20 4E 4F 29 20	
+     291       24			
+     292 06C7  0A 0D 44 6F 20 59 6F		CSECTION2 	DB	10 , 13
+					 , "Do You Want Fries     ? (Y = YES ||
+					 N = NO) $" 
+     293       75 20 57 61 6E 74 20	
+     294       46 72 69 65 73 20 20	
+     295       20 20 20 3F 20 28 59	
+     296       20 3D 20 59 45 53 20	
+     297       7C 7C 20 4E 20 3D 20	
+     298       4E 4F 29 20 24		
+     299 06F6  0A 0D 3C 3C 3C 3C 3C		CSECTION3	DB	10 , 13
+					 , "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+					<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+					>>>>" , 10 , 13 , "$"  
+     300       3C 3C 3C 3C 3C 3C 3C	
+     301       3C 3C 3C 3C 3C 3C 3C	
+     302       3C 3C 3C 3C 3C 3C 3C	
+     303       3C 3C 3C 3C 3C 3C 3C	
+     304       3C 3C 3C 3C 3C 3C 3E	
+     305       3E 3E 3E 3E 3E 3E 3E	
+     306       3E 3E 3E 3E 3E 3E 3E	
+     307       3E 3E 3E 3E 3E 3E 3E	
+     308       3E 3E 3E 3E 3E 3E 3E	
+     309       3E 3E 3E 3E 3E 3E 3E	
+     310       3E 3E 3E 0A 0D 24	
+     311 0749  000A[				MCUST		DB	10 DUP 
+					(?) 
+     312	    ??			
+     313			 ]	
+     314				
+     315 0753  0A 0D 09 57 48 41 54		TAKEORDER	DB	10 , 13
+					 , "	WHAT YOU WANT TO ORDER? >>> MEA
+					L $" 
+     316       20 59 4F 55 20 57 41	
+     317       4E 54 20 54 4F 20 4F	
+     318       52 44 45 52 3F 20 3E	
+     319       3E 3E 20 4D 45 41 4C	
+     320       20 24			
+     321 0778  0A 0D 57 41 4E 54 20		CONTINUEORDER	DB	10 , 13
+					 , "WANT TO CONTINUE ORDER? (Y/N) >>> $
+					" 
+     322       54 4F 20 43 4F 4E 54	
+     323       49 4E 55 45 20 4F 52	
+     324       44 45 52 3F 20 28 59	
+     325       2F 4E 29 20 3E 3E 3E	
+     326       20 24			
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-9
+
+
+     327 079D  ??				TEMP		DB	? 
+     328 079E  2E 30 30 24			DECPOINT	DB	".00$" 
+     329 07A2  2E 24				DOT		DB	".$" 
+     330 07A4  0A 0D 2D 2D 2D 2D 2D		INVALID_MEAL	DB	10,13,"
+					-------------------------- !!! Invalid 
+					Meal ID !!! --------------------------$
+					" 
+     331       2D 2D 2D 2D 2D 2D 2D	
+     332       2D 2D 2D 2D 2D 2D 2D	
+     333       2D 2D 2D 2D 2D 2D 2D	
+     334       20 21 21 21 20 49 6E	
+     335       76 61 6C 69 64 20 4D	
+     336       65 61 6C 20 49 44 20	
+     337       21 21 21 20 2D 2D 2D	
+     338       2D 2D 2D 2D 2D 2D 2D	
+     339       2D 2D 2D 2D 2D 2D 2D	
+     340       2D 2D 2D 2D 2D 2D 2D	
+     341       2D 2D 24			
+     342				 
+     343					; Food Name, Quantity and Price
+					 
+     344					; -----------------------------
+					--------------------- 
+     345 07F4  0A 0D 09 46 69 6C 65		ORDNAME1	DB	10 , 13
+					 , "	Filet-O-Fish Meal	
+							x $" 
+     346       74 2D 4F 2D 46 69 73	
+     347       68 20 4D 65 61 6C 09	
+     348       09 09 78 20 24		
+     349 080E  00				QTY1		DB	0 
+     350 080F  0010[				ORDQTY1	DB	16 DUP (0) 
+     351	   00			
+     352			 ]	
+     353				
+     354 081F  0F				MEAL1		DB	15 
+     355 0820  0A 0D 09 53 70 69 63		ORDNAME2	DB	10 , 13
+					 , "	Spicy McChicken Deluxe Meal
+							x $" 
+     356       79 20 4D 63 43 68 69	
+     357       63 6B 65 6E 20 44 65	
+     358       6C 75 78 65 20 4D 65	
+     359       61 6C 09 09 78 20 24	
+     360 0843  00				QTY2		DB	0 
+     361 0844  0010[				ORDQTY2	DB	16 DUP (0) 
+     362	   00			
+     363			 ]	
+     364				
+     365 0854  13				MEAL2		DB	19 
+     366 0855  0A 0D 09 44 6F 75 62		ORDNAME3	DB	10 , 13
+					 , "	Double Cheeseburger Meal
+							x $" 
+     367       6C 65 20 43 68 65 65	
+     368       73 65 62 75 72 67 65	
+     369       72 20 4D 65 61 6C 09	
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-10
+
+
+     370       09 78 20 24		
+     371 0875  00				QTY3		DB	0 
+     372 0876  0010[				ORDQTY3	DB	16 DUP (0) 
+     373	   00			
+     374			 ]	
+     375				
+     376 0886  11				MEAL3		DB	17 
+     377 0887  0A 0D 09 53 6D 6F 6B		ORDNAME4	DB	10 , 13
+					 , "	Smoky Grilled Beef Meal	
+							x $" 
+     378       79 20 47 72 69 6C 6C	
+     379       65 64 20 42 65 65 66	
+     380       20 4D 65 61 6C 09 09	
+     381       09 78 20 24		
+     382 08A7  00				QTY4		DB	0 
+     383 08A8  0010[				ORDQTY4	DB	16 DUP (0)
+						 
+     384	   00			
+     385			 ]	
+     386				
+     387 08B8  14				MEAL4		DB	20 
+     388 08B9  0A 0D 09 4F 72 65 6F		ORDNAME5	DB	10 , 13
+					 , "	Oreo McFlurry		
+							x $" 
+     389       20 4D 63 46 6C 75 72	
+     390       72 79 09 09 09 09 78	
+     391       20 24			
+     392 08D0  00				QTY5		DB	0 
+     393 08D1  0010[				ORDQTY5	DB	16 DUP (0) 
+     394	   00			
+     395			 ]	
+     396				
+     397 08E1  07				MEAL5		DB	7 
+     398 08E2  0A 0D 09 41 70 70 6C		ORDNAME6	DB	10 , 13
+					 , "	Apple Pie		
+							x $" 
+     399       65 20 50 69 65 09 09	
+     400       09 09 78 20 24		
+     401 08F5  00				QTY6		DB	0 
+     402 08F6  0010[				ORDQTY6	DB	16 DUP (0) 
+     403	   00			
+     404			 ]	
+     405				
+     406 0906  04				MEAL6		DB	4 
+     407				 
+     408				 
+     409					; Subtotal, Total Tax and Total
+					 Price 
+     410					; -----------------------------
+					----------------------------- 
+     411 0907  00				SUBTOTAL	DB	0 
+     412 0908  00				TAX		DB	0
+						 
+     413 0909  ??				TOTAL		DB	? 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-11
+
+
+     414				 
+     415 090A  05				CSST1		DB	5 
+     416 090B  64				CSST2		DB	100 
+     417 090C  ??				SST1		DB	? 
+     418 090D  ??				SST2		DB	? 
+     419 090E  ??				R1		DB	? 
+     420 090F  ??				R2		DB	? 
+     421 0910  ??				R3		DB	? 
+     422 0911  ??				R4		DB	? 
+     423 0912  00				TEMP1		DB	0 
+     424 0913  00				TEMP2 		DB	0
+						 
+     425 0914  09 53 75 62 2D 74 6F		RM		DB 	"
+						Sub-total : RM $" 
+     426       74 61 6C 20 3A 20 52	
+     427       4D 20 24			
+     428 0925  0A 0D 09 54 61 78 20		TTAX		DB	10 , 13
+					 , "	Tax       : RM $" 
+     429       20 20 20 20 20 20 3A	
+     430       20 52 4D 20 24		
+     431 0938  0A 0D 09 54 6F 74 61		TOTAL1		DB	10 , 13
+					 , "	Total	  : RM $" 
+     432       6C 09 20 20 3A 20 52	
+     433       4D 20 24			
+     434 0949  0010[				RTOTAL	 	DB 	16 DUP 
+					(0) 
+     435	   00			
+     436			 ]	
+     437				
+     438				 
+     439				 
+     440					; Receipt module DATA segment  
+     441					; -----------------------------
+					---------------------------------------
+					---------------------------------------
+					-- 
+     442					; Receipt Format 
+     443					; --------------------------- 
+     444 0959  0A 0D 20 2A 2A 2A 2A		RTITLE		DB 	10 , 13
+					 , " **********************************
+					  Receipt  ****************************
+					*****" , 10 , 13 , "$" 
+     445       2A 2A 2A 2A 2A 2A 2A	
+     446       2A 2A 2A 2A 2A 2A 2A	
+     447       2A 2A 2A 2A 2A 2A 2A	
+     448       2A 2A 2A 2A 2A 2A 2A	
+     449       2A 2A 20 20 52 65 63	
+     450       65 69 70 74 20 20 2A	
+     451       2A 2A 2A 2A 2A 2A 2A	
+     452       2A 2A 2A 2A 2A 2A 2A	
+     453       2A 2A 2A 2A 2A 2A 2A	
+     454       2A 2A 2A 2A 2A 2A 2A	
+     455       2A 2A 2A 2A 0A 0D 24	
+     456 09AD  0A 0D 09 4D 72 2E 20		RGREET		DB	10 , 13
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-12
+
+
+					 , "	Mr. / Ms. , This is your transa
+					ction details. $"	 
+     457       2F 20 4D 73 2E 20 2C	
+     458       20 54 68 69 73 20 69	
+     459       73 20 79 6F 75 72 20	
+     460       74 72 61 6E 73 61 63	
+     461       74 69 6F 6E 20 64 65	
+     462       74 61 69 6C 73 2E 20	
+     463       24			
+     464 09DF  0A 0D 09 54 6F 74 61		RATTEMPT	DB 	10 , 13
+					 , "	Total Attempt >>  $" 
+     465       6C 20 41 74 74 65 6D	
+     466       70 74 20 3E 3E 20 20	
+     467       24			
+     468 09F5  0A 0D 20 20 20 2D 2D		RLINE1	 	DB	10 , 13
+					 , "   --------------------------------
+					---------------------------------------
+					---" , 10, 13 , "$" 
+     469       2D 2D 2D 2D 2D 2D 2D	
+     470       2D 2D 2D 2D 2D 2D 2D	
+     471       2D 2D 2D 2D 2D 2D 2D	
+     472       2D 2D 2D 2D 2D 2D 2D	
+     473       2D 2D 2D 2D 2D 2D 2D	
+     474       2D 2D 2D 2D 2D 2D 2D	
+     475       2D 2D 2D 2D 2D 2D 2D	
+     476       2D 2D 2D 2D 2D 2D 2D	
+     477       2D 2D 2D 2D 2D 2D 2D	
+     478       2D 2D 2D 2D 2D 2D 2D	
+     479       2D 2D 0A 0D 24		
+     480 0A47  0A 0D 09 09 54 48 41		RTHANK		DB	10 , 13
+					 , "		THANK YOU FOR YOUR ORDE
+					R ! HAVE A NICE DAY !$" 
+     481       4E 4B 20 59 4F 55 20	
+     482       46 4F 52 20 59 4F 55	
+     483       52 20 4F 52 44 45 52	
+     484       20 21 20 48 41 56 45	
+     485       20 41 20 4E 49 43 45	
+     486       20 44 41 59 20 21 24	
+     487 0A78  0A 0D 20 20 2A 2A 2A		RCLOSE		DB 	10 , 13
+					 , "  *********************************
+					***************************************
+					*****$" 
+     488       2A 2A 2A 2A 2A 2A 2A	
+     489       2A 2A 2A 2A 2A 2A 2A	
+     490       2A 2A 2A 2A 2A 2A 2A	
+     491       2A 2A 2A 2A 2A 2A 2A	
+     492       2A 2A 2A 2A 2A 2A 2A	
+     493       2A 2A 2A 2A 2A 2A 2A	
+     494       2A 2A 2A 2A 2A 2A 2A	
+     495       2A 2A 2A 2A 2A 2A 2A	
+     496       2A 2A 2A 2A 2A 2A 2A	
+     497       2A 2A 2A 2A 2A 2A 2A	
+     498       2A 2A 2A 2A 24		
+     499					 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-13
+
+
+     500				 
+     501					; Total Attempt by The User 
+     502					; -----------------------------
+					---------- 
+     503 0ACA  00				ATTEMPT	DB	0 
+     504 0ACB  0010[				TATTEMPT	DB	16 DUP 
+					(0) 
+     505	   00			
+     506			 ]	
+     507				
+     508				 
+     509				; -------------------------------------
+					---------------------------------------
+					--------------------------  Code Start 
+					 --------------
+     510				 
+     511 0000				.CODE				
+							; declare CODE segment 
+     512				 
+     513 0000					MAIN	PROC	FAR	
+							; MAIN procedure starts
+					 here 
+     514				 
+     515 0000  B8 ---- R			MOV	AX , @DATA	
+							; initialise DS registe
+					r 
+     516 0003  8E D8				MOV	DS , AX		 
+     517				 
+     518					; Login module  
+     519					; -----------------------------
+					---------------------------------------
+					---------------------------------------
+					----------------------
+     520				 
+     521 0005				ASKID:	 
+     522 0005  B4 09				MOV	AH , 09H	
+							; ASK USER ENTER USERID
+					 
+     523 0007  8D 16 047A R			LEA	DX , USER_ID 
+     524 000B  CD 21				INT	21H 
+     525				 
+     526 000D  B9 0003				MOV	CX , 3		
+						;CHANGE CX -> 3, LOOP 3 TIMES t
+					o check userid 
+     527 0010  BB 0000				MOV	BX , 0		
+						;CHANGE BX -> 0 
+     528				 
+     529 0013				ACCEPT_ID:	 
+     530 0013  B4 07				MOV	AH , 07H	
+							; ACCEPT USER_ID W/echo
+					 
+     531 0015  CD 21				INT	21H 
+     532 0017  88 87 04C0 R			MOV	IN_USERID[BX],AL 
+     533				 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-14
+
+
+     534 001B  B4 02				MOV	AH , 02H	; DISPL
+					AY '*'	AFTER ENTER A CHARACTER 
+     535 001D  B2 2A				MOV	DL , '*' 
+     536 001F  CD 21				INT	21H 
+     537				 
+     538 0021  43				INC	BX 		;INCREA
+					SE BX TO INCREASE THE INDEX 
+     539 0022  E2 EF				LOOP	ACCEPT_ID	
+						;LOOP ACCEPT_ID TO ENTER OTHER 
+					CHARACTER 
+     540					  
+     541 0024  BB 0000				MOV	BX , 0		 
+     542				 
+     543				; ------------------------------------C
+					HECK USERID 'mcd'----------------------
+					-------------------------- 
+     544				 
+     545 0027  80 BF 04C0 R 6D			CMP	IN_USERID[BX] , 'm'
+									 
+     546 002C  75 14				JNE 	INMSG		
+						;IF WRONG, JMP TO INMSG (displa
+					y invalid msg) 
+     547 002E  43				INC	BX 
+     548				 
+     549 002F  80 BF 04C0 R 63			CMP	IN_USERID[BX] , 'c'
+									 
+     550 0034  75 0C				JNE 	INMSG	 
+     551 0036  43				INC	BX 
+     552				 
+     553 0037  80 BF 04C0 R 64			CMP	IN_USERID[BX] , 'd'
+									 
+     554 003C  75 04				JNE 	INMSG		 
+     555 003E  43				INC	BX 
+     556 003F  EB 0B 90				JMP	CORRECT_MSG 	
+						;IF CORRECT, JMP TO CORRECT_MSG
+					 (display valid msg) 
+     557				 
+     558				; -------------------------------------
+					---IF WRONG USERID---------------------
+					--------------------- 
+     559				 
+     560 0042				INMSG:	 
+     561 0042  B4 09				MOV	AH , 09H	
+							;DISPLAY INVALID MSG 
+     562 0044  8D 16 0493 R			LEA	DX , INVALID 
+     563 0048  CD 21				INT	21H 
+     564 004A  EB B9				JMP	ASKID		
+						;JMP TO ASKID :ASK USER ENTER I
+					D	 
+     565				 
+     566				 
+     567				; -------------------------------------
+					---IF CORRECT USERID-------------------
+					---------------------------- 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-15
+
+
+     568 004C				CORRECT_MSG :	 
+     569 004C  B4 09				MOV	AH , 09H	
+							;DISPLAY VALID MSG 
+     570 004E  8D 16 04AA R			LEA 	DX , VALID 
+     571 0052  CD 21				INT	21H 
+     572 0054  EB 01 90				JMP	HOME 
+     573				 
+     574				;--------------------------------------
+					---DISPLAY HEADER----------------------
+					------------------------	 
+     575 0057				HOME: 
+     576 0057  B4 09				MOV	AH , 09H 
+     577 0059  8D 16 0000 R			LEA	DX , HEADER1	
+							;display HEADER1 
+     578 005D  CD 21				INT	21H 
+     579					 
+     580 005F  8D 16 0025 R			LEA	DX , HEADER2	
+							;display HEADER2 
+     581 0063  CD 21				INT	21H 
+     582				 
+     583 0065  8D 16 004A R			LEA	DX , HEADER3	
+							;display HEADER3 
+     584 0069  CD 21				INT	21H	 
+     585				 
+     586 006B  8D 16 006F R			LEA	DX , HEADER4	
+							;display HEADER4 
+     587 006F  CD 21				INT	21H 
+     588				 
+     589 0071  8D 16 0094 R			LEA	DX , HEADER5	
+							;display HEADER5 
+     590 0075  CD 21				INT	21H	 
+     591				 
+     592 0077  8D 16 00B9 R			LEA	DX , HEADER6	
+							;display HEADER6 
+     593 007B  CD 21				INT	21H 
+     594				 
+     595 007D  8D 16 00DF R			LEA	DX , HEADER7	
+							;display HEADER7 
+     596 0081  CD 21				INT	21H 
+     597				 
+     598 0083  B4 02				MOV	AH , 02H 
+     599 0085  B2 0D				MOV	DL , 0DH 
+     600 0087  CD 21				INT	21H		
+								;go to new line
+					 (\n) ----> displaying CR and LF charac
+					ters 
+     601 0089  B2 0A				MOV	DL , 0AH 
+     602 008B  CD 21				INT	21H 
+     603				 
+     604				 
+     605				; -------------------------------------
+					---------------------------------------
+					-------- Advertisement module ---------
+					---------------
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-16
+
+
+     606				 
+     607 008D  B4 09				MOV	AH , 09H 
+     608 008F  8D 16 010D R			LEA	DX , ADV	
+								;display ADV 
+     609 0093  CD 21				INT 21H 
+     610						 
+     611 0095  8D 16 0143 R			LEA	DX , ADV1	
+							;display ADV1 
+     612 0099  CD 21				INT 21H 
+     613								
+						 
+     614 009B  8D 16 0186 R			LEA	DX , ADV2	
+							;display ADV2 
+     615 009F  CD 21				INT 21H 
+     616				 
+     617 00A1  8D 16 0199 R			LEA	DX , ADV3	
+							;display ADV3 
+     618 00A5  CD 21				INT 21H 
+     619				 
+     620 00A7  8D 16 01D1 R			LEA	DX , ADV4	
+							;display ADV4 
+     621 00AB  CD 21				INT 21H 
+     622					 
+     623 00AD  8D 16 0203 R			LEA	DX , ADV5	
+							;display ADV5 
+     624 00B1  CD 21				INT 21H 
+     625				 
+     626 00B3  8D 16 0246 R			LEA	DX , ADV6	
+							;display ADV6 
+     627 00B7  CD 21				INT 21H 
+     628				 
+     629 00B9  8D 16 0259 R			LEA	DX , ADV7	
+							;display ADV7 
+     630 00BD  CD 21				INT 21H 
+     631				 
+     632 00BF  8D 16 029C R			LEA	DX , ADV8	
+							;display ADV8 
+     633 00C3  CD 21				INT 21H 
+     634				 
+     635 00C5  8D 16 02DF R			LEA	DX , ADV9	
+							;display ADV9 
+     636 00C9  CD 21				INT 21H 
+     637				 
+     638 00CB  8D 16 0322 R			LEA	DX , ADV10	
+							;display ADV10 
+     639 00CF  CD 21				INT 21H 
+     640				 
+     641 00D1  8D 16 0365 R			LEA	DX , ADV11	
+							;display ADV11 
+     642 00D5  CD 21				INT 21H 
+     643				 
+     644 00D7  8D 16 039C R			LEA	DX , ADV12	
+							;display ADV12 
+     645 00DB  CD 21				INT 21H 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-17
+
+
+     646				 
+     647 00DD  8D 16 03D1 R			LEA	DX , ADV13	
+							;display ADV13 
+     648 00E1  CD 21				INT 21H 
+     649				 
+     650 00E3  8D 16 0414 R			LEA	DX , ADV14	
+							;display ADV14 
+     651 00E7  CD 21				INT 21H 
+     652				 
+     653					; ---------------- Stop the pro
+					cess ---------------- 
+     654					; To let the user read the adve
+					rtisement 
+     655				 
+     656 00E9  8D 16 0457 R			LEA	DX , TXT	
+								;display CONT 
+     657 00ED  CD 21				INT 21H 
+     658					 
+     659 00EF  B4 01				MOV	AH , 01H	
+								; accept a char
+					acter 
+     660 00F1  CD 21				INT	21H		
+							; the char accepted wil
+					l be store automatically to AL register
+					 
+     661 00F3  A2 0479 R			MOV	CONT , AL	
+							; to protect the AL val
+					ue by moving it into CONT 
+     662				 
+     663 00F6  80 3E 0479 R 31			CMP	CONT , "1" 
+     664 00FB  74 00				JE	CONTINUE	
+						; jump to CONTINUE (Continue th
+					e process) 
+     665				 
+     666				 
+     667				; -------------------------------------
+					---------------------------------------
+					-------- Payment module ---------------
+					---------------
+     668				 
+     669 00FD				CONTINUE: 
+     670 00FD  B4 09				MOV	AH , 09H 
+     671 00FF  8D 16 04C5 R			LEA	DX , MSECTION1	
+							; display MSECTION1 
+     672 0103  CD 21				INT 	21H 
+     673				 
+     674 0105  B4 09				MOV	AH , 09H 
+     675 0107  8D 16 0517 R			LEA	DX , MSECTION2	
+							; display MSECTION2 
+     676 010B  CD 21				INT 	21H 
+     677				 
+     678 010D  B4 09				MOV	AH , 09H 
+     679 010F  8D 16 053E R			LEA	DX , MSECTION3	
+							; display MSECTION3 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-18
+
+
+     680 0113  CD 21				INT 	21H 
+     681				 
+     682 0115  B4 09				MOV	AH , 09H 
+     683 0117  8D 16 0573 R			LEA	DX , MNAME1	
+							; display MNAME1 
+     684 011B  CD 21				INT 	21H 
+     685				 
+     686 011D  B4 09				MOV	AH , 09H 
+     687 011F  8D 16 0596 R			LEA	DX , MNAME2	
+							; display MNAME2 
+     688 0123  CD 21				INT 	21H 
+     689				 
+     690 0125  B4 09				MOV	AH , 09H 
+     691 0127  8D 16 05C3 R			LEA	DX , MNAME3	
+							; display MNAME3 
+     692 012B  CD 21				INT 	21H 
+     693				 
+     694 012D  B4 09				MOV	AH , 09H 
+     695 012F  8D 16 05E9 R			LEA	DX , MNAME4	
+							; display MNAME4 
+     696 0133  CD 21				INT 	21H 
+     697				 
+     698 0135  B4 09				MOV	AH , 09H 
+     699 0137  8D 16 060E R			LEA	DX , MNAME5	
+							; display MNAME5 
+     700 013B  CD 21				INT 	21H 
+     701				 
+     702 013D  B4 09				MOV	AH , 09H 
+     703 013F  8D 16 062A R			LEA	DX , MNAME6	
+							; display MNAME6 
+     704 0143  CD 21				INT 	21H 
+     705				 
+     706				; Loop 
+     707				; -------------------------------------
+					---------------------------------------
+					------- 
+     708				 
+     709 0145				RUN:	 
+     710 0145  B4 09				MOV	AH , 09H 
+     711 0147  8D 16 0753 R			LEA	DX , TAKEORDER	
+							; display TAKEORDER 
+     712 014B  CD 21				INT 	21H 
+     713				 
+     714 014D  B4 01				MOV	AH , 01H	
+								; accept a char
+					acter 
+     715 014F  CD 21				INT	21H		
+							; the char accepted wil
+					l be store automatically to AL register
+					 
+     716 0151  A2 079D R			MOV	TEMP , AL	
+							; to protect the AL val
+					ue by moving it into TEMP 
+     717				 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-19
+
+
+     718 0154  B4 02				MOV	AH , 02H 
+     719 0156  B2 0D			     	MOV	DL , 0DH 
+     720 0158  CD 21			     	INT	21H		
+							; go to new line 
+     721 015A  B2 0A			     	MOV	DL , 0AH	 
+     722 015C  CD 21			     	INT	21H 
+     723				 
+     724					; -----------------------------
+					-------------- IF MEAL 1---------------
+					------------------------------- 
+     725 015E  80 3E 079D R 31			CMP	TEMP , "1"	
+							; compare TEMP to "1" 
+     726 0163  74 4B				JE	L1		
+							; jump to L1 
+     727				 
+     728					; -----------------------------
+					-------------- IF MEAL 2 --------------
+					-------------------------------- 
+     729 0165  80 3E 079D R 32			CMP 	TEMP , "2"	
+							; compare TEMP to "2" 
+     730 016A  74 58				JE	L2		
+							; jump to L2 
+     731				 
+     732					; -----------------------------
+					-------------- IF MEAL 3 --------------
+					-------------------------------- 
+     733 016C  80 3E 079D R 33			CMP 	TEMP , "3"	
+							; compare TEMP to "3" 
+     734 0171  74 65				JE	L3		
+							; jump to L3 
+     735				 
+     736					; -----------------------------
+					-------------- IF MEAL 4 --------------
+					-------------------------------- 
+     737 0173  80 3E 079D R 34			CMP 	TEMP , "4"	
+							; compare TEMP to "4" 
+     738 0178  74 72				JE	L4		
+							; jump to L4 
+     739				 
+     740					; -----------------------------
+					-------------- IF MEAL 5 --------------
+					-------------------------------- 
+     741 017A  80 3E 079D R 35			CMP 	TEMP , "5"	
+							; compare TEMP to "5" 
+     742 017F  74 7F				JE	L5		
+							; jump to L5 
+     743				 
+     744					; -----------------------------
+					-------------- IF MEAL 6 --------------
+					-------------------------------- 
+     745 0181  80 3E 079D R 36			CMP 	TEMP , "6"	
+							; compare TEMP to "6" 
+     746 0186  74 1C				JE	A1		
+							; jump to L6 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-20
+
+
+     747					;------------------------------
+					------IF MEAL 7-9 & 0 (Invalid meal)---
+					----------------------------- 
+     748 0188  80 3E 079D R 37			CMP 	TEMP , "7" 
+     749 018D  74 17				JE	L0		
+							;jump to L0 to display 
+					invalid msg 
+     750					 
+     751 018F  80 3E 079D R 38			CMP 	TEMP , "8" 
+     752 0194  74 10				JE	L0 
+     753				 
+     754 0196  80 3E 079D R 39			CMP 	TEMP , "9" 
+     755 019B  74 09				JE	L0 
+     756				 
+     757 019D  80 3E 079D R 30			CMP 	TEMP , "0" 
+     758 01A2  74 02				JE	L0 
+     759				 
+     760 01A4				A1: 
+     761 01A4  74 6E				JE	L6 
+     762				; ------------------------------------ 
+					Calculate Food Price and Add into Subto
+					tal -----------------------------------
+					----------- 
+     763 01A6				L0: 	 
+     764 01A6  B4 09				MOV	AH , 09H 
+     765 01A8  8D 16 07A4 R			LEA	DX , INVALID_MEAL
+							;display invalid meal i
+					d message 
+     766 01AC  CD 21				INT 	21H 
+     767 01AE  71 95				JNO	RUN 
+     768				 
+     769 01B0				L1:	 
+     770 01B0  A0 0907 R			MOV	AL , SUBTOTAL	
+							; move SUBTOTAL to AX 
+     771 01B3  02 06 081F R			ADD	AL , MEAL1	
+							; add 15 to SUBTOTAL 
+     772 01B7  A2 0907 R			MOV	SUBTOTAL , AL	
+							; store sum back to SUB
+					TOTAL 
+     773				 
+     774 01BA  FE 06 080E R			INC 	QTY1		
+						; increment L1 food quantity (+
+					1) 
+     775 01BE  FE 06 0ACA R			INC	ATTEMPT		
+						; increment total attempt (+1) 
+     776 01C2  71 67				JNO	CUST		
+						; jump to CUST 
+     777				 
+     778 01C4				L2:	 
+     779 01C4  A0 0907 R			MOV	AL , SUBTOTAL	
+							; move SUBTOTAL to AX 
+     780 01C7  02 06 0854 R			ADD	AL , MEAL2	
+							; add 19 to SUBTOTAL 
+     781 01CB  A2 0907 R			MOV	SUBTOTAL , AL	
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-21
+
+
+							; store sum back to SUB
+					TOTAL 
+     782 01CE  FE 06 0843 R			INC 	QTY2		
+						; increment L2 food quantity (+
+					1) 
+     783 01D2  FE 06 0ACA R			INC	ATTEMPT		
+						; increment total attempt (+1) 
+     784 01D6  71 53				JNO	CUST		
+						; jump to CUST 
+     785				 
+     786 01D8				L3:	 
+     787 01D8  A0 0907 R			MOV	AL , SUBTOTAL	
+							; move SUBTOTAL to AX 
+     788 01DB  02 06 0886 R			ADD	AL , MEAL3	
+							; add 17 to SUBTOTAL 
+     789 01DF  A2 0907 R			MOV	SUBTOTAL , AL	
+							; store sum back to SUB
+					TOTAL 
+     790				 
+     791 01E2  FE 06 0875 R			INC 	QTY3		
+						; increment L3 food quantity (+
+					1) 
+     792 01E6  FE 06 0ACA R			INC	ATTEMPT		
+						; increment total attempt (+1) 
+     793 01EA  71 3F				JNO	CUST		
+						; jump to CUST 
+     794				 
+     795 01EC				L4:	 
+     796 01EC  A0 0907 R			MOV	AL , SUBTOTAL	
+							; move SUBTOTAL to AX 
+     797 01EF  02 06 08B8 R			ADD	AL , MEAL4	
+							; add 20 to SUBTOTAL 
+     798 01F3  A2 0907 R			MOV	SUBTOTAL , AL	
+							; store sum back to SUB
+					TOTAL 
+     799				 
+     800 01F6  FE 06 08A7 R			INC 	QTY4		
+						; increment L4 food quantity (+
+					1) 
+     801 01FA  FE 06 0ACA R			INC	ATTEMPT		
+						; increment total attempt (+1) 
+     802 01FE  71 2B				JNO	CUST		
+						; jump to CUST 
+     803				 
+     804 0200				L5:	 
+     805 0200  A0 0907 R			MOV	AL , SUBTOTAL	
+							; move SUBTOTAL to AX 
+     806 0203  02 06 08E1 R			ADD	AL , MEAL5	
+							; add 7 to SUBTOTAL 
+     807 0207  A2 0907 R			MOV	SUBTOTAL , AL	
+							; store sum back to SUB
+					TOTAL 
+     808				 
+     809 020A  FE 06 08D0 R			INC 	QTY5		
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-22
+
+
+						; increment L5 food quantity (+
+					1) 
+     810 020E  FE 06 0ACA R			INC	ATTEMPT		
+						; increment total attempt (+1) 
+     811 0212  71 3F				JNO 	MSG		
+						; jump to MSG 
+     812				 
+     813 0214				L6:	 
+     814 0214  A0 0907 R			MOV	AL , SUBTOTAL	
+							; move SUBTOTAL to AX 
+     815 0217  02 06 0906 R			ADD	AL , MEAL6	
+							; add 4 to SUBTOTAL 
+     816 021B  A2 0907 R			MOV	SUBTOTAL , AL	
+							; store sum back to SUB
+					TOTAL 
+     817				 
+     818 021E  FE 06 08F5 R			INC 	QTY6		
+						; increment L6 food quantity (+
+					1) 
+     819 0222  FE 06 0ACA R			INC	ATTEMPT		
+						; increment total attempt (+1) 
+     820 0226  71 2B				JNO 	MSG		
+						; jump to MSG 
+     821				 
+     822				; -------------------------- Jumper ---
+					----------------------- 
+     823				;  to increase jump distance due to rel
+					ative jump out of range 
+     824 0228				JUMPER:	 
+     825 0228  E9 0145 R			JMP 	RUN		
+						; jump to RUN 
+     826				 
+     827				; -------------------------------------
+					----------- Customize Menu ------------
+					------------------------------ 
+     828				 
+     829 022B				CUST: 
+     830 022B  B4 09				MOV	AH , 09H 
+     831 022D  8D 16 0648 R			LEA	DX , CSECTION1	
+							; display CSECTION1 
+     832 0231  CD 21				INT 	21H	 
+     833				 
+     834 0233  B4 01				MOV	AH , 01H	
+							; accept a character 
+     835 0235  CD 21				INT	21H		
+							; the char accepted wil
+					l be store automatically to AL register
+					 
+     836 0237  A2 0749 R			MOV	MCUST , AL	
+							; to protect the AL val
+					ue by moving it into MCUST 
+     837 023A  B4 09				MOV	AH , 09H 
+     838				 
+     839 023C  8D 16 06C7 R			LEA	DX , CSECTION2	
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-23
+
+
+							; display CSECTION2 
+     840 0240  CD 21				INT 	21H 
+     841				 
+     842 0242  B4 01				MOV	AH , 01H	
+							; accept a character 
+     843 0244  CD 21				INT	21H		
+							; the char accepted wil
+					l be store automatically to AL register
+					 
+     844 0246  A2 0749 R			MOV	MCUST , AL	
+							; to protect the AL val
+					ue by moving it into MCUST 
+     845 0249  B4 09				MOV	AH , 09H 
+     846				 
+     847 024B  8D 16 06F6 R			LEA	DX , CSECTION3	
+							; display CSECTION3 
+     848 024F  CD 21				INT 	21H 
+     849					 
+     850 0251  71 00				JNO 	MSG		
+						; jump to MSG 
+     851				 
+     852				; -------------------------------------
+					-------- Continue Ordering Message ----
+					------------------------------------ 
+     853				 
+     854 0253  B4 09			MSG:	MOV	AH , 09H 
+     855 0255  8D 16 0778 R			LEA 	DX , CONTINUEORDER
+							; display CONTINUEORDER
+					 
+     856 0259  CD 21				INT	21H 
+     857					 
+     858 025B  B4 01				MOV	AH , 01H	
+							; accept a character 
+     859 025D  CD 21				INT	21H		
+							; the char accepted wil
+					l be store automatically to AL register
+					 
+     860 025F  A2 079D R			MOV	TEMP , AL	
+							; to protect the AL val
+					ue by moving it into TEMP 
+     861				 
+     862 0262  80 3E 079D R 59			CMP	TEMP , "Y"	
+							; compare TEMP to "Y" 
+     863 0267  74 BF				JE	JUMPER		
+							; jump to JUMPER 
+     864				 
+     865 0269  80 3E 079D R 79			CMP	TEMP , "y"	
+							; compare TEMP to "y" 
+     866 026E  74 B8				JE	JUMPER		
+							; jump to JUMPER 
+     867				 
+     868 0270  80 3E 079D R 4E			CMP	TEMP , "N"	
+							; compare TEMP to "N" 
+     869 0275  74 07				JE	NORUN		
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-24
+
+
+							; jump to NORUN 
+     870				 
+     871 0277  80 3E 079D R 6E			CMP	TEMP , "n"	
+							; compare TEMP to "n" 
+     872 027C  74 00				JE	NORUN		
+							; jump to NORUN 
+     873				 
+     874				 
+     875				 
+     876				; -------------------------------------
+					---------------------------------------
+					-------- Receipt module ---------------
+					---------------
+     877				 
+     878 027E				NORUN:	 
+     879 027E  B4 02				MOV	AH , 02H 
+     880 0280  B2 0D			     	MOV	DL , 0DH 
+     881 0282  CD 21			     	INT	21H		
+						; go to new line 
+     882 0284  B2 0A				MOV	DL , 0AH	 
+     883 0286  CD 21			     	INT	21H 
+     884				 
+     885					; Convert Total Attempt Value 
+     886					; -----------------------------
+					---------------------------------------
+					--------------- 
+     887				 
+     888 0288  B4 00				MOV 	AH , 00 
+     889 028A  A0 0ACA R			MOV 	AL , ATTEMPT 
+     890 028D  B9 000A				MOV 	CX , 10 
+     891 0290  33 DB				XOR 	BX , BX 	
+							; count the pushes 
+     892				 
+     893 0292				CONVERT: 
+     894 0292  33 D2				XOR 	DX , DX 
+     895 0294  F7 F1				DIV	CX 
+     896 0296  52				PUSH 	DX 		
+							; DL is a digit in rang
+					e [0..9] 
+     897 0297  43				INC 	BX 		
+							; Count it 
+     898				 
+     899 0298  85 C0				TEST 	AX , AX 
+     900 029A  75 F6				JNZ 	CONVERT		; AX is
+					 not zero - so, continue... 
+     901								
+							 
+     902 029C  8B CB				MOV 	CX , BX		
+							; Now POP them all usin
+					g BX as a counter 
+     903 029E  8D 36 0ACB R			LEA 	SI , TATTEMPT 	
+							; DS:SI points to your 
+					buffer 
+     904				 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-25
+
+
+     905 02A2				GET_VALUE: 
+     906 02A2  58				POP 	AX 
+     907 02A3  04 30				ADD 	AL , '0' 	
+							; make it ASCII 
+     908				 
+     909 02A5  88 04				MOV 	[SI] , AL	
+							; save it in the buffer
+					 
+     910 02A7  46				INC 	SI 
+     911				 
+     912 02A8  E2 F8				LOOP 	GET_VALUE 
+     913				 
+     914 02AA  B0 24				MOV 	AL , '$'	
+							; Store '$' to use with
+					 Func. 9h Int 21h 
+     915 02AC  88 04				MOV  	[SI] , AL 
+     916				 
+     917				; ------------------------------- Conve
+					rt Total Ordered Food Quantity --------
+					---------------------------------------
+					---- 
+     918				 
+     919 02AE  B4 00				MOV 	AH , 00 
+     920 02B0  A0 080E R			MOV 	AL , QTY1 
+     921 02B3  B9 000A				MOV 	CX , 10 
+     922 02B6  33 DB				XOR 	BX , BX 	
+							; count the pushes 
+     923				 
+     924 02B8				CONVERT1: 
+     925 02B8  33 D2				XOR 	DX , DX 
+     926 02BA  F7 F1				DIV	CX 
+     927 02BC  52				PUSH 	DX 		
+							; DL is a digit in rang
+					e [0..9] 
+     928 02BD  43				INC 	BX 		
+							; Count it 
+     929				 
+     930 02BE  85 C0				TEST 	AX , AX 
+     931 02C0  75 F6				JNZ 	CONVERT1	
+						; AX is not zero - so, continue
+					... 
+     932								
+							 
+     933 02C2  8B CB				MOV 	CX , BX		
+							; Now POP them all usin
+					g BX as a counter 
+     934 02C4  8D 36 080F R			LEA 	SI , ORDQTY1	
+							; DS:SI points to your 
+					buffer 
+     935				 
+     936 02C8				GET_QTY1: 
+     937 02C8  58				POP 	AX 
+     938 02C9  04 30				ADD 	AL , '0' 	
+							; make it ASCII 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-26
+
+
+     939				 
+     940 02CB  88 04				MOV 	[SI] , AL	
+							; save it in the buffer
+					 
+     941 02CD  46				INC 	SI 
+     942				 
+     943 02CE  E2 F8				LOOP 	GET_QTY1 
+     944				 
+     945 02D0  B0 24				MOV 	AL , '$'	
+							; Store '$' to use with
+					 Func. 9h Int 21h 
+     946 02D2  88 04				MOV  	[SI] , AL 
+     947				 
+     948 02D4  B4 00				MOV 	AH , 00 
+     949 02D6  A0 0843 R			MOV 	AL , QTY2 
+     950 02D9  B9 000A				MOV 	CX , 10 
+     951 02DC  33 DB				XOR 	BX , BX 	
+							; count the pushes 
+     952				 
+     953 02DE				CONVERT2: 
+     954 02DE  33 D2				XOR 	DX , DX 
+     955 02E0  F7 F1				DIV	CX 
+     956 02E2  52				PUSH 	DX 		
+							; DL is a digit in rang
+					e [0..9] 
+     957 02E3  43				INC 	BX 		
+							; Count it 
+     958				 
+     959 02E4  85 C0				TEST 	AX , AX 
+     960 02E6  75 F6				JNZ 	CONVERT2 	
+						; AX is not zero - so, continue
+					... 
+     961								
+							 
+     962 02E8  8B CB				MOV 	CX , BX		
+							; Now POP them all usin
+					g BX as a counter 
+     963 02EA  8D 36 0844 R			LEA 	SI , ORDQTY2	
+							; DS:SI points to your 
+					buffer 
+     964				 
+     965 02EE				GET_QTY2: 
+     966 02EE  58				POP 	AX 
+     967 02EF  04 30				ADD 	AL , '0' 	
+							; make it ASCII 
+     968				 
+     969 02F1  88 04				MOV 	[SI] , AL	
+							; save it in the buffer
+					 
+     970 02F3  46				INC 	SI 
+     971				 
+     972 02F4  E2 F8				LOOP 	GET_QTY2 
+     973				 
+     974 02F6  B0 24				MOV 	AL , '$'	
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-27
+
+
+							; Store '$' to use with
+					 Func. 9h Int 21h 
+     975 02F8  88 04				MOV  	[SI] , AL 
+     976				 
+     977 02FA  B4 00				MOV 	AH , 00 
+     978 02FC  A0 0875 R			MOV 	AL , QTY3 
+     979 02FF  B9 000A				MOV 	CX , 10 
+     980 0302  33 DB				XOR 	BX , BX 	
+							; count the pushes 
+     981				 
+     982 0304				CONVERT3: 
+     983 0304  33 D2				XOR 	DX , DX 
+     984 0306  F7 F1				DIV	CX 
+     985 0308  52				PUSH 	DX 		
+							; DL is a digit in rang
+					e [0..9] 
+     986 0309  43				INC 	BX 		
+							; Count it 
+     987				 
+     988 030A  85 C0				TEST 	AX , AX 
+     989 030C  75 F6				JNZ 	CONVERT3 	
+						; AX is not zero - so, continue
+					... 
+     990								
+							 
+     991 030E  8B CB				MOV 	CX , BX		
+							; Now POP them all usin
+					g BX as a counter 
+     992 0310  8D 36 0876 R			LEA 	SI , ORDQTY3	
+							; DS:SI points to your 
+					buffer 
+     993				 
+     994 0314				GET_QTY3: 
+     995 0314  58				POP 	AX 
+     996 0315  04 30				ADD 	AL , '0' 	
+							; make it ASCII 
+     997				 
+     998 0317  88 04				MOV 	[SI] , AL	
+							; save it in the buffer
+					 
+     999 0319  46				INC 	SI 
+    1000				 
+    1001 031A  E2 F8				LOOP 	GET_QTY3 
+    1002				 
+    1003 031C  B0 24				MOV 	AL , '$'	
+							; Store '$' to use with
+					 Func. 9h Int 21h 
+    1004 031E  88 04				MOV  	[SI] , AL 
+    1005				 
+    1006 0320  B4 00				MOV 	AH , 00 
+    1007 0322  A0 08A7 R			MOV 	AL , QTY4 
+    1008 0325  B9 000A				MOV 	CX , 10 
+    1009 0328  33 DB				XOR 	BX , BX 	
+							; count the pushes 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-28
+
+
+    1010				 
+    1011 032A				CONVERT4: 
+    1012 032A  33 D2				XOR 	DX , DX 
+    1013 032C  F7 F1				DIV	CX 
+    1014 032E  52				PUSH 	DX 		
+							; DL is a digit in rang
+					e [0..9] 
+    1015 032F  43				INC 	BX 		
+							; Count it 
+    1016				 
+    1017 0330  85 C0				TEST 	AX , AX 
+    1018 0332  75 F6				JNZ 	CONVERT4	
+						; AX is not zero - so, continue
+					... 
+    1019								
+							 
+    1020 0334  8B CB				MOV 	CX , BX		
+							; Now POP them all usin
+					g BX as a counter 
+    1021 0336  8D 36 08A8 R			LEA 	SI , ORDQTY4	
+							; DS:SI points to your 
+					buffer 
+    1022				 
+    1023 033A				GET_QTY4: 
+    1024 033A  58				POP 	AX 
+    1025 033B  04 30				ADD 	AL , '0' 	
+							; make it ASCII 
+    1026				 
+    1027 033D  88 04				MOV 	[SI] , AL	
+							; save it in the buffer
+					 
+    1028 033F  46				INC 	SI 
+    1029				 
+    1030 0340  E2 F8				LOOP 	GET_QTY4 
+    1031				 
+    1032 0342  B0 24				MOV 	AL , '$'	
+							; Store '$' to use with
+					 Func. 9h Int 21h 
+    1033 0344  88 04				MOV  	[SI] , AL 
+    1034				 
+    1035 0346  B4 00				MOV 	AH , 00 
+    1036 0348  A0 08D0 R			MOV 	AL , QTY5 
+    1037 034B  B9 000A				MOV 	CX , 10 
+    1038 034E  33 DB				XOR 	BX , BX 	
+							; count the pushes 
+    1039				 
+    1040 0350				CONVERT5: 
+    1041 0350  33 D2				XOR 	DX , DX 
+    1042 0352  F7 F1				DIV	CX 
+    1043 0354  52				PUSH 	DX 		
+							; DL is a digit in rang
+					e [0..9] 
+    1044 0355  43				INC 	BX 		
+							; Count it 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-29
+
+
+    1045				 
+    1046 0356  85 C0				TEST 	AX , AX 
+    1047 0358  75 F6				JNZ 	CONVERT5 	
+						; AX is not zero - so, continue
+					... 
+    1048								
+							 
+    1049 035A  8B CB				MOV 	CX , BX		
+							; Now POP them all usin
+					g BX as a counter 
+    1050 035C  8D 36 08D1 R			LEA 	SI , ORDQTY5	
+							; DS:SI points to your 
+					buffer 
+    1051				 
+    1052 0360				GET_QTY5: 
+    1053 0360  58				POP 	AX 
+    1054 0361  04 30				ADD 	AL , '0' 	
+							; make it ASCII 
+    1055				 
+    1056 0363  88 04				MOV 	[SI] , AL	
+							; save it in the buffer
+					 
+    1057 0365  46				INC 	SI 
+    1058				 
+    1059 0366  E2 F8				LOOP 	GET_QTY5 
+    1060				 
+    1061 0368  B0 24				MOV 	AL , '$'	
+							; Store '$' to use with
+					 Func. 9h Int 21h 
+    1062 036A  88 04				MOV  	[SI] , AL 
+    1063				 
+    1064 036C  B4 00				MOV 	AH , 00 
+    1065 036E  A0 08F5 R			MOV 	AL , QTY6 
+    1066 0371  B9 000A				MOV 	CX , 10 
+    1067 0374  33 DB				XOR 	BX , BX 	
+							; count the pushes 
+    1068				 
+    1069 0376				CONVERT6: 
+    1070 0376  33 D2				XOR 	DX , DX 
+    1071 0378  F7 F1				DIV	CX 
+    1072 037A  52				PUSH 	DX 		
+							; DL is a digit in rang
+					e [0..9] 
+    1073 037B  43				INC 	BX 		
+							; Count it 
+    1074				 
+    1075 037C  85 C0				TEST 	AX , AX 
+    1076 037E  75 F6				JNZ 	CONVERT6 	
+						; AX is not zero - so, continue
+					... 
+    1077								
+							 
+    1078 0380  8B CB				MOV 	CX , BX		
+							; Now POP them all usin
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-30
+
+
+					g BX as a counter 
+    1079 0382  8D 36 08F6 R			LEA 	SI , ORDQTY6	
+							; DS:SI points to your 
+					buffer 
+    1080				 
+    1081 0386				GET_QTY6: 
+    1082 0386  58				POP 	AX 
+    1083 0387  04 30				ADD 	AL , '0' 	
+							; make it ASCII 
+    1084				 
+    1085 0389  88 04				MOV 	[SI] , AL	
+							; save it in the buffer
+					 
+    1086 038B  46				INC 	SI 
+    1087				 
+    1088 038C  E2 F8				LOOP 	GET_QTY6 
+    1089				 
+    1090 038E  B0 24				MOV 	AL , '$'	
+							; Store '$' to use with
+					 Func. 9h Int 21h 
+    1091 0390  88 04				MOV  	[SI] , AL 
+    1092				 
+    1093				; -------------------------------------
+					---------------------    Receipt Displa
+					y    ----------------------------------
+					---------------
+    1094				 
+    1095 0392  B4 09				MOV	AH , 09H 
+    1096 0394  8D 16 0959 R			LEA	DX , RTITLE	
+							; display RTITLE (Recei
+					pt Title) 
+    1097 0398  CD 21				INT 	21H 
+    1098					 
+    1099 039A  B4 09				MOV	AH , 09H 
+    1100 039C  8D 16 09AD R			LEA	DX , RGREET	
+							; display RGREET (Greet
+					ing) 
+    1101 03A0  CD 21				INT 	21H 
+    1102				 
+    1103 03A2  B4 09				MOV	AH , 09H 
+    1104 03A4  8D 16 09DF R			LEA	DX , RATTEMPT	
+							; display RATTEMPT (Tot
+					al Attempt >> ) 
+    1105 03A8  CD 21				INT 	21H 
+    1106				 
+    1107 03AA  B4 09				MOV	AH , 09H 
+    1108 03AC  8D 16 0ACB R			LEA	DX , TATTEMPT	
+							; display TATTEMPT (Tot
+					al Attempt) 
+    1109 03B0  CD 21				INT 	21H 
+    1110				 
+    1111 03B2  B4 09				MOV	AH , 09H 
+    1112 03B4  8D 16 09F5 R			LEA	DX , RLINE1	
+							; display RLINE1 (Break
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-31
+
+
+					 Line) 
+    1113 03B8  CD 21				INT 	21H 
+    1114				 
+    1115				; -----------------------------  Food Q
+					uantity Checkings ---------------------
+					--------- 
+    1116				 
+    1117 03BA  80 3E 080E R 00		 	CMP	QTY1 , 0     	
+						; check whether the L1 food qua
+					ntity is > 1 or not 
+    1118 03BF  75 68			 	JNE     	JUMPER1 
+							; if > 1, jump to JUMPE
+					R1 
+    1119 03C1  74 00				JZ	CHECK2		
+						; if = 0, jump to CHECK2 
+    1120				 
+    1121 03C3				CHECK2: 
+    1122 03C3  80 3E 0843 R 00			CMP	QTY2 , 0      	
+						; check whether the L2 food qua
+					ntity is > 1 or not    
+    1123 03C8  75 62			 	JNE     	JUMPER2	
+							; if > 1, jump to JUMPE
+					R2 
+    1124 03CA  74 00				JZ	CHECK3		
+						; if = 0, jump to CHECK3   
+    1125				 
+    1126 03CC				CHECK3: 
+    1127 03CC  80 3E 0875 R 00			CMP	QTY3 , 0      	
+						; check whether the L3 food qua
+					ntity is > 1 or not 
+    1128 03D1  75 5C			 	JNE     	JUMPER3	
+							; if > 1, jump to JUMPE
+					R3 
+    1129 03D3  74 00				JZ	CHECK4		
+						; if = 0, jump to CHECK4  
+    1130				 
+    1131 03D5				CHECK4: 
+    1132 03D5  80 3E 08A7 R 00			CMP	QTY4 , 0     	
+						; check whether the L4 food qua
+					ntity is > 1 or not 
+    1133 03DA  75 56			 	JNE     	JUMPER4	
+							; if > 1, jump to JUMPE
+					R4   
+    1134 03DC  74 00				JZ	CHECK5		
+						; if = 0, jump to CHECK5 
+    1135				 
+    1136 03DE				CHECK5: 
+    1137 03DE  80 3E 08D0 R 00			CMP	QTY5 , 0     	
+						; check whether the L5 food qua
+					ntity is > 1 or not 
+    1138 03E3  75 50			 	JNE     	JUMPER5	
+							; if > 1, jump to JUMPE
+					R5  
+    1139 03E5  74 00				JZ	CHECK6		
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-32
+
+
+						; if = 0, jump to CHECK6 
+    1140				 
+    1141 03E7				CHECK6: 
+    1142 03E7  80 3E 08F5 R 00			CMP	QTY6 , 0      	
+						; check whether the L6 food qua
+					ntity is > 1 or not 
+    1143 03EC  75 4A			 	JNE     	JUMPER6	
+							; if > 1, jump to JUMPE
+					R6 
+    1144 03EE  74 00				JZ	DONE		
+						; if = 0, jump to DONE 
+    1145				 
+    1146				; -----------------------------------  
+					Display Break Line --------------------
+					----------------------- 
+    1147				 
+    1148 03F0				DONE: 
+    1149 03F0  B4 02				MOV	AH , 02H 
+    1150 03F2  B2 0D			     	MOV	DL , 0DH 
+    1151 03F4  CD 21			     	INT	21H		
+							; go to new line  
+    1152 03F6  B2 0A				MOV	DL , 0AH	 
+    1153 03F8  CD 21			     	INT	21H 
+    1154					 
+    1155 03FA  B4 09				MOV	AH , 09H 
+    1156 03FC  8D 16 09F5 R			LEA	DX , RLINE1	
+							; display RLINE1 (Break
+					 Line) 
+    1157 0400  CD 21				INT 	21H 
+    1158				 
+    1159 0402  B4 02				MOV	AH , 02H 
+    1160 0404  B2 0D			     	MOV	DL , 0DH 
+    1161 0406  CD 21			     	INT	21H		
+							; go to new line  
+    1162 0408  B2 0A				MOV	DL , 0AH	 
+    1163 040A  CD 21			     	INT	21H 
+    1164				 
+    1165					;-------------------------Conve
+					rt num to string and display it out----
+					--------------------- 
+    1166				 
+    1167 040C  B4 00				MOV 	AH , 00 
+    1168 040E  A0 0907 R			MOV 	AL , SUBTOTAL 
+    1169 0411  B9 000A				MOV 	CX , 10 
+    1170 0414  33 DB				XOR 	BX , BX 	
+							; count the pushes 
+    1171				 
+    1172 0416				DIVIDE: 
+    1173 0416  33 D2				XOR 	DX , DX 
+    1174 0418  F7 F1				DIV	CX 
+    1175 041A  52				PUSH 	DX 		
+							; DL is a digit in rang
+					e [0..9] 
+    1176 041B  43				INC 	BX 		
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-33
+
+
+							; Count it 
+    1177				 
+    1178 041C  85 C0				TEST 	AX , AX 
+    1179 041E  75 F6				JNZ 	DIVIDE 		
+							; EAX is not zero - so,
+					 continue... 
+    1180								
+							 
+    1181 0420  8B CB				MOV 	CX , BX		
+							; Now POP them all usin
+					g BX as a counter 
+    1182 0422  8D 36 0949 R			LEA 	SI , RTOTAL 	
+							; DS:SI points to your 
+					buffer 
+    1183 0426  EB 13 90				JMP	SKIP		; jump 
+					to SKIP (to avoid the jumpers and infin
+					ite looping) 
+    1184					 
+    1185				; ----------------- Jumpers -----------
+					--------------- 
+    1186				;  to increase jump distance due to rel
+					ative jump out of range 
+    1187				 
+    1188 0429				JUMPER1: 
+    1189 0429  E9 0577 R			JMP	ORDERED1	
+						; jump to ORDERED1 
+    1190 042C				JUMPER2: 
+    1191 042C  E9 058A R			JMP	ORDERED2	
+						; jump to ORDERED2 
+    1192 042F				JUMPER3: 
+    1193 042F  E9 059D R			JMP	ORDERED3	
+						; jump to ORDERED3 
+    1194 0432				JUMPER4: 
+    1195 0432  E9 05B0 R			JMP	ORDERED4	
+						; jump to ORDERED4 
+    1196 0435				JUMPER5: 
+    1197 0435  E9 05C3 R			JMP	ORDERED5	
+						; jump to ORDERED5 
+    1198 0438				JUMPER6: 
+    1199 0438  E9 05D6 R			JMP	ORDERED6	
+						; jump to ORDERED6 
+    1200				 
+    1201				; -----------------------------------  
+					Display Price -------------------------
+					------------------ 
+    1202				 
+    1203 043B				SKIP: 
+    1204 043B				GET_DIGIT: 
+    1205 043B  58				POP 	AX 
+    1206 043C  04 30				ADD 	AL , '0' 	
+							; make it ASCII 
+    1207				 
+    1208 043E  88 04				MOV 	[SI] , AL	
+							; save it in the buffer
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-34
+
+
+					 
+    1209 0440  46				INC 	SI 
+    1210				 
+    1211 0441  E2 F8				LOOP 	GET_DIGIT 
+    1212				 
+    1213 0443  B0 24				MOV 	AL , '$'	
+							; Store '$' to use with
+					 Func. 9h Int 21h 
+    1214 0445  88 04				MOV  	[SI] , AL 
+    1215				 
+    1216 0447  B4 09				MOV 	AH , 09H 
+    1217 0449  8D 16 0914 R			LEA 	DX , RM		
+							; display RM 
+    1218 044D  CD 21				INT 	21H 
+    1219				 
+    1220 044F  B4 09				MOV 	AH , 09H 
+    1221 0451  8D 16 0949 R			LEA 	DX , RTOTAL	
+							; display STROUTPUT 
+    1222 0455  CD 21				INT 	21H 
+    1223				 
+    1224 0457  B4 09				MOV 	AH , 09H 
+    1225 0459  8D 16 079E R			LEA 	DX , DECPOINT	
+							; display DECPOINT 
+    1226 045D  CD 21				INT 	21H 
+    1227 045F  EB 04 90				JMP	CALTAX		; jump 
+					to CALTAX (to avoid the jumper and infi
+					nite looping) 
+    1228				 
+    1229				; ----------------- Jumper ------------
+					-------------- 
+    1230				;  to increase jump distance due to rel
+					ative jump out of range 
+    1231				 
+    1232 0462				TOEXIT: 
+    1233 0462  E9 05E9 R			JMP	EXIT		; jump 
+					to EXIT 
+    1234				 
+    1235				;---------------------------- Calculate
+					 TAX ---------------------------- 
+    1236				 
+    1237 0465				CALTAX: 
+    1238 0465  B4 00				MOV 	AH , 00 
+    1239 0467  A0 0907 R			MOV	AL , SUBTOTAL 
+    1240 046A  F6 26 090A R			MUL	CSST1 
+    1241 046E  F6 36 090B R			DIV	CSST2		
+						 
+    1242				 
+    1243 0472  A2 090C R			MOV	SST1 , AL 
+    1244 0475  A2 0912 R			MOV	TEMP1 , AL 
+    1245 0478  80 06 090C R 30			ADD	SST1 , 30H 
+    1246 047D  88 26 090D R			MOV	SST2 , AH 
+    1247 0481  80 06 090D R 30			ADD	SST2 , 30H 
+    1248				 
+    1249					;--------------------------- 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-35
+
+
+    1250				 
+    1251 0486  A0 090D R			MOV	AL , SST2 
+    1252 0489  BA 0000				MOV	DX , 0 
+    1253 048C  BB 000A				MOV	BX , 10		
+						 
+    1254 048F  F7 F3				DIV	BX 
+    1255								
+							; use to retrieve first
+					 decimal point 
+    1256 0491  88 26 090E R			MOV	R1 , AH 
+    1257 0495  80 06 090E R 30			ADD	R1 , 30H 
+    1258 049A  A2 090F R			MOV	R2 , AL 
+    1259 049D  80 06 090F R 30			ADD	R2 , 30H 
+    1260				 
+    1261					;---------------------------- 
+    1262				 
+    1263 04A2  A0 090D R			MOV	AL , SST2 
+    1264 04A5  BA 0000				MOV	DX , 0 
+    1265 04A8  BB 000A				MOV	BX , 10 
+    1266 04AB  F7 F3				DIV	BX 
+    1267								
+							; use to retrieve secon
+					d decimal point 
+    1268 04AD  88 26 0910 R			MOV	R3 , AH 
+    1269 04B1  80 06 0910 R 30			ADD	R3 , 30H	
+							; e.g. 1 --> "1" 
+    1270 04B6  A2 0911 R			MOV	R4 , AL 
+    1271 04B9  80 06 0911 R 30			ADD	R4 , 30H	
+							; e.g. 1 --> "1" 
+    1272				 
+    1273					;--------------------------- 
+    1274				 
+    1275 04BE  B4 09				MOV	AH , 09H 
+    1276 04C0  8D 16 0925 R			LEA	DX , TTAX	
+							; display TTAX (Tax    
+					   : RM) 
+    1277 04C4  CD 21				INT 	21H 
+    1278				 
+    1279 04C6  B4 02				MOV 	AH , 02H 
+    1280 04C8  8A 16 090C R			MOV	DL , SST1	
+							; display quotient stor
+					e in SST1 
+    1281 04CC  CD 21				INT 	21h 
+    1282				 
+    1283 04CE  B4 02				MOV	AH , 02H 
+    1284 04D0  8A 16 07A2 R			MOV	DL , DOT	
+							; display DOT (.) 
+    1285 04D4  CD 21				INT 	21H 
+    1286				 
+    1287 04D6  B4 02				MOV 	AH , 02H 
+    1288 04D8  8A 16 090E R			MOV	DL , R1		
+							; display quotient stor
+					e in R1 
+    1289 04DC  CD 21				INT 	21h 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-36
+
+
+    1290				 
+    1291 04DE  B4 02				MOV 	AH , 02H 
+    1292 04E0  8A 16 0910 R			MOV	DL , R3		
+							; display quotient stor
+					e in R3 
+    1293 04E4  CD 21				INT 	21h 
+    1294				 
+    1295 04E6  B4 02				MOV	AH , 02H 
+    1296 04E8  B2 0D			     	MOV	DL , 0DH 
+    1297 04EA  CD 21			     	INT	21H		
+							; go to new line 
+    1298 04EC  B2 0A			     	MOV	DL , 0AH	 
+    1299 04EE  CD 21			     	INT	21H 
+    1300				 
+    1301 04F0  B4 09				MOV	AH , 09H 
+    1302 04F2  8D 16 0938 R			LEA	DX , TOTAL1	
+							; display TOTAL1 (Total
+						  : RM) 
+    1303 04F6  CD 21				INT 	21H 
+    1304				 
+    1305 04F8  A0 0907 R			MOV	AL , SUBTOTAL	
+							; move SUBTOTAL to AL 
+    1306 04FB  02 06 0912 R			ADD	AL , TEMP1	
+							; add TEMP1 
+    1307 04FF  A2 0909 R			MOV	TOTAL , AL 
+    1308					 
+    1309					;----------------------Convert 
+					num to string and display it out-------
+					--------------- 
+    1310				 
+    1311 0502  B4 00				MOV 	AH , 00 
+    1312 0504  A0 0909 R			MOV 	AL , TOTAL 
+    1313 0507  B9 000A				MOV 	CX , 10 
+    1314 050A  33 DB				XOR 	BX , BX 	
+							; count the pushes 
+    1315				 
+    1316 050C				DIVIDE1: 
+    1317 050C  33 D2				XOR 	DX , DX 
+    1318 050E  F7 F1				DIV	CX 
+    1319 0510  52				PUSH 	DX 		
+							; DL is a digit in rang
+					e [0..9] 
+    1320 0511  43				INC 	BX 		
+							; Count it 
+    1321				 
+    1322 0512  85 C0				TEST 	AX , AX 
+    1323 0514  75 F6				JNZ 	DIVIDE1 	
+							; AX is not zero - so, 
+					continue... 
+    1324								
+							 
+    1325 0516  8B CB				MOV 	CX , BX		
+							; Now POP them all usin
+					g BX as a counter 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-37
+
+
+    1326 0518  8D 36 0949 R			LEA 	SI , RTOTAL 	
+							; DS:SI points to your 
+					buffer 
+    1327				 
+    1328 051C				GET_DIGIT1: 
+    1329 051C  58				POP 	AX 
+    1330 051D  04 30				ADD 	AL , '0' 	
+							; make it ASCII 
+    1331				 
+    1332 051F  88 04				MOV 	[SI] , AL	
+							; save it in the buffer
+					 
+    1333 0521  46				INC 	SI 
+    1334				 
+    1335 0522  E2 F8				LOOP 	GET_DIGIT1 
+    1336				 
+    1337 0524  B0 24				MOV 	AL , '$'	
+							; Store '$' to use with
+					 Func. 9h Int 21h 
+    1338 0526  88 04				MOV  	[SI] , AL 
+    1339				 
+    1340 0528  B4 09				MOV 	AH , 09H 
+    1341 052A  8D 16 0949 R			LEA 	DX , RTOTAL	
+							; display STROUTPUT 
+    1342 052E  CD 21				INT 	21H 
+    1343				 
+    1344					;------------------------------
+					---- 
+    1345				 
+    1346 0530  B4 02				MOV	AH , 02H 
+    1347 0532  8A 16 07A2 R			MOV	DL , DOT	
+							; display DOT (.) 
+    1348 0536  CD 21				INT 	21H 
+    1349				 
+    1350 0538  B4 02				MOV 	AH , 02H 
+    1351 053A  8A 16 090E R			MOV	DL , R1		
+							; display quotient stor
+					e in R1 
+    1352 053E  CD 21				INT 	21h 
+    1353				 
+    1354 0540  B4 02				MOV 	AH , 02H 
+    1355 0542  8A 16 0910 R			MOV	DL , R3		
+							; display quotient stor
+					e in R3 
+    1356 0546  CD 21				INT 	21h	 
+    1357				 
+    1358 0548  B4 02				MOV	AH , 02H 
+    1359 054A  B2 0D			     	MOV	DL , 0DH 
+    1360 054C  CD 21			     	INT	21H		
+							; go to new line  
+    1361 054E  B2 0A				MOV	DL , 0AH	 
+    1362 0550  CD 21			     	INT	21H 
+    1363				 
+    1364 0552  B4 09				MOV	AH , 09H 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-38
+
+
+    1365 0554  8D 16 09F5 R			LEA	DX , RLINE1	
+							; display RLINE1 (Break
+					 Line) 
+    1366 0558  CD 21				INT 	21H 
+    1367				 
+    1368 055A  B4 09				MOV	AH , 09H 
+    1369 055C  8D 16 0A47 R			LEA	DX , RTHANK	
+							; display RTHANK (Thank
+					 you) 
+    1370 0560  CD 21				INT 	21H 
+    1371				 
+    1372 0562  B4 02				MOV	AH , 02H 
+    1373 0564  B2 0D			     	MOV	DL , 0DH 
+    1374 0566  CD 21			     	INT	21H		
+							; go to new line 
+    1375 0568  B2 0A				MOV	DL , 0AH	 
+    1376 056A  CD 21			     	INT	21H 
+    1377				 
+    1378 056C  B4 09				MOV	AH , 09H 
+    1379 056E  8D 16 0A78 R			LEA	DX , RCLOSE	
+							; display RCLOSE (Closi
+					ng Line) 
+    1380 0572  CD 21				INT 	21H 
+    1381 0574  EB 73 90				JMP	EXIT		
+						; jump to EXIT (to avoid the OR
+					DERED(s) and infinite looping) 
+    1382				 
+    1383				; -------------------------------------
+					-----  Display Ordered Food Name and Qu
+					antity --------------------------------
+					--------- 
+    1384				; Only displayed if food quantity >1 
+    1385				 
+    1386 0577				ORDERED1: 
+    1387 0577  B4 09				MOV	AH , 09H 
+    1388 0579  8D 16 07F4 R			LEA	DX , ORDNAME1	
+							; display ORDNAME1 Orde
+					red Food Name 1 
+    1389 057D  CD 21				INT 	21H 
+    1390				 
+    1391 057F  B4 09				MOV	AH , 09H 
+    1392 0581  8D 16 080F R			LEA	DX , ORDQTY1	
+							; display ORDQTY1 (Orde
+					red Food Quantity 1) 
+    1393 0585  CD 21				INT	21H 
+    1394 0587  E9 03C3 R			JMP	CHECK2		
+						; jump back to CHECK2 
+    1395				 
+    1396 058A				ORDERED2: 
+    1397 058A  B4 09				MOV	AH , 09H 
+    1398 058C  8D 16 0820 R			LEA	DX , ORDNAME2	
+							; display ORDNAME2 (Ord
+					ered Food Name 2) 
+    1399 0590  CD 21				INT 	21H 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-39
+
+
+    1400				 
+    1401 0592  B4 09				MOV	AH , 09H 
+    1402 0594  8D 16 0844 R			LEA	DX , ORDQTY2	
+							; display ORDQTY2 (Orde
+					red Food Quantity 2) 
+    1403 0598  CD 21				INT	21H 
+    1404 059A  E9 03CC R			JMP	CHECK3		
+						; jump back to CHECK3 
+    1405				 
+    1406 059D				ORDERED3: 
+    1407 059D  B4 09				MOV	AH , 09H 
+    1408 059F  8D 16 0855 R			LEA	DX , ORDNAME3	
+							; display ORDNAME3 (Ord
+					ered Food Name 3)  
+    1409 05A3  CD 21				INT 	21H 
+    1410				 
+    1411 05A5  B4 09				MOV	AH , 09H 
+    1412 05A7  8D 16 0876 R			LEA	DX , ORDQTY3	
+							; display ORDQTY3 (Orde
+					red Food Quantity 3) 
+    1413 05AB  CD 21				INT	21H 
+    1414 05AD  E9 03D5 R			JMP	CHECK4		
+						; jump back to CHECK4 
+    1415				 
+    1416 05B0				ORDERED4: 
+    1417 05B0  B4 09				MOV	AH , 09H 
+    1418 05B2  8D 16 0887 R			LEA	DX , ORDNAME4	
+							; display ORDNAME4 (Ord
+					ered Food Name 4) 
+    1419 05B6  CD 21				INT 	21H 
+    1420				 
+    1421 05B8  B4 09				MOV	AH , 09H 
+    1422 05BA  8D 16 08A8 R			LEA	DX , ORDQTY4	
+							; display ORDQTY4 (Orde
+					red Food Quantity 4) 
+    1423 05BE  CD 21				INT	21H 
+    1424 05C0  E9 03DE R			JMP	CHECK5		
+						; jump back to CHECK5 
+    1425				 
+    1426 05C3				ORDERED5: 
+    1427 05C3  B4 09				MOV	AH , 09H 
+    1428 05C5  8D 16 08B9 R			LEA	DX , ORDNAME5	
+							; display ORDNAME5 (Ord
+					ered Food Name 5) 
+    1429 05C9  CD 21				INT 	21H 
+    1430				 
+    1431 05CB  B4 09				MOV	AH , 09H 
+    1432 05CD  8D 16 08D1 R			LEA	DX , ORDQTY5	
+							; display ORDQTY5 (Orde
+					red Food Quantity 5) 
+    1433 05D1  CD 21				INT	21H 
+    1434 05D3  E9 03E7 R			JMP	CHECK6		
+						; jump back to CHECK6 
+    1435				 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Page     1-40
+
+
+    1436 05D6				ORDERED6: 
+    1437 05D6  B4 09				MOV	AH , 09H 
+    1438 05D8  8D 16 08E2 R			LEA	DX , ORDNAME6	
+							; display ORDNAME6 (Ord
+					ered Food Name 6) 
+    1439 05DC  CD 21				INT 	21H 
+    1440				 
+    1441 05DE  B4 09				MOV	AH , 09H 
+    1442 05E0  8D 16 08F6 R			LEA	DX , ORDQTY6	
+							; display ORDQTY6 (Orde
+					red Food Quantity 6) 
+    1443 05E4  CD 21				INT	21H 
+    1444 05E6  E9 03F0 R			JMP	DONE		
+						; jump back to DONE 
+    1445				  
+    1446				; -------------------------------------
+					---------------------------------------
+					------------------------------------ Ex
+					it ------------
+    1447					 
+    1448 05E9				EXIT: 
+    1449 05E9  B8 4C00				MOV	AX , 4C00H	
+							; request for proper ex
+					it 
+    1450 05EC  CD 21				INT	21H	 
+    1451				 
+    1452 05EE					MAIN ENDP		
+							; end of entire program
+					 
+    1453				 
+    1454 05EE				END 	MAIN			
+							; end of program 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+DGROUP . . . . . . . . . . . . .  	GROUP
+  _DATA  . . . . . . . . . . . .  	0ADB	WORD	PUBLIC	'DATA'
+  STACK  . . . . . . . . . . . .  	0040	PARA	STACK	'STACK'
+_TEXT  . . . . . . . . . . . . .  	05EE	WORD	PUBLIC	'CODE'
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+A1 . . . . . . . . . . . . . . .  	L NEAR	01A4	_TEXT
+ACCEPT_ID  . . . . . . . . . . .  	L NEAR	0013	_TEXT
+ADV  . . . . . . . . . . . . . .  	L BYTE	010D	_DATA
+ADV1 . . . . . . . . . . . . . .  	L BYTE	0143	_DATA
+ADV10  . . . . . . . . . . . . .  	L BYTE	0322	_DATA
+ADV11  . . . . . . . . . . . . .  	L BYTE	0365	_DATA
+ADV12  . . . . . . . . . . . . .  	L BYTE	039C	_DATA
+ADV13  . . . . . . . . . . . . .  	L BYTE	03D1	_DATA
+ADV14  . . . . . . . . . . . . .  	L BYTE	0414	_DATA
+ADV2 . . . . . . . . . . . . . .  	L BYTE	0186	_DATA
+ADV3 . . . . . . . . . . . . . .  	L BYTE	0199	_DATA
+ADV4 . . . . . . . . . . . . . .  	L BYTE	01D1	_DATA
+ADV5 . . . . . . . . . . . . . .  	L BYTE	0203	_DATA
+ADV6 . . . . . . . . . . . . . .  	L BYTE	0246	_DATA
+ADV7 . . . . . . . . . . . . . .  	L BYTE	0259	_DATA
+ADV8 . . . . . . . . . . . . . .  	L BYTE	029C	_DATA
+ADV9 . . . . . . . . . . . . . .  	L BYTE	02DF	_DATA
+ASKID  . . . . . . . . . . . . .  	L NEAR	0005	_TEXT
+ATTEMPT  . . . . . . . . . . . .  	L BYTE	0ACA	_DATA
+
+CALTAX . . . . . . . . . . . . .  	L NEAR	0465	_TEXT
+CHECK2 . . . . . . . . . . . . .  	L NEAR	03C3	_TEXT
+CHECK3 . . . . . . . . . . . . .  	L NEAR	03CC	_TEXT
+CHECK4 . . . . . . . . . . . . .  	L NEAR	03D5	_TEXT
+CHECK5 . . . . . . . . . . . . .  	L NEAR	03DE	_TEXT
+CHECK6 . . . . . . . . . . . . .  	L NEAR	03E7	_TEXT
+CONT . . . . . . . . . . . . . .  	L BYTE	0479	_DATA
+CONTINUE . . . . . . . . . . . .  	L NEAR	00FD	_TEXT
+CONTINUEORDER  . . . . . . . . .  	L BYTE	0778	_DATA
+CONVERT  . . . . . . . . . . . .  	L NEAR	0292	_TEXT
+CONVERT1 . . . . . . . . . . . .  	L NEAR	02B8	_TEXT
+CONVERT2 . . . . . . . . . . . .  	L NEAR	02DE	_TEXT
+CONVERT3 . . . . . . . . . . . .  	L NEAR	0304	_TEXT
+CONVERT4 . . . . . . . . . . . .  	L NEAR	032A	_TEXT
+CONVERT5 . . . . . . . . . . . .  	L NEAR	0350	_TEXT
+CONVERT6 . . . . . . . . . . . .  	L NEAR	0376	_TEXT
+CORRECT_MSG  . . . . . . . . . .  	L NEAR	004C	_TEXT
+CSECTION1  . . . . . . . . . . .  	L BYTE	0648	_DATA
+CSECTION2  . . . . . . . . . . .  	L BYTE	06C7	_DATA
+CSECTION3  . . . . . . . . . . .  	L BYTE	06F6	_DATA
+CSST1  . . . . . . . . . . . . .  	L BYTE	090A	_DATA
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Symbols-2
+
+
+CSST2  . . . . . . . . . . . . .  	L BYTE	090B	_DATA
+CUST . . . . . . . . . . . . . .  	L NEAR	022B	_TEXT
+
+DECPOINT . . . . . . . . . . . .  	L BYTE	079E	_DATA
+DIVIDE . . . . . . . . . . . . .  	L NEAR	0416	_TEXT
+DIVIDE1  . . . . . . . . . . . .  	L NEAR	050C	_TEXT
+DONE . . . . . . . . . . . . . .  	L NEAR	03F0	_TEXT
+DOT  . . . . . . . . . . . . . .  	L BYTE	07A2	_DATA
+
+EXIT . . . . . . . . . . . . . .  	L NEAR	05E9	_TEXT
+
+GET_DIGIT  . . . . . . . . . . .  	L NEAR	043B	_TEXT
+GET_DIGIT1 . . . . . . . . . . .  	L NEAR	051C	_TEXT
+GET_QTY1 . . . . . . . . . . . .  	L NEAR	02C8	_TEXT
+GET_QTY2 . . . . . . . . . . . .  	L NEAR	02EE	_TEXT
+GET_QTY3 . . . . . . . . . . . .  	L NEAR	0314	_TEXT
+GET_QTY4 . . . . . . . . . . . .  	L NEAR	033A	_TEXT
+GET_QTY5 . . . . . . . . . . . .  	L NEAR	0360	_TEXT
+GET_QTY6 . . . . . . . . . . . .  	L NEAR	0386	_TEXT
+GET_VALUE  . . . . . . . . . . .  	L NEAR	02A2	_TEXT
+
+HEADER1  . . . . . . . . . . . .  	L BYTE	0000	_DATA
+HEADER2  . . . . . . . . . . . .  	L BYTE	0025	_DATA
+HEADER3  . . . . . . . . . . . .  	L BYTE	004A	_DATA
+HEADER4  . . . . . . . . . . . .  	L BYTE	006F	_DATA
+HEADER5  . . . . . . . . . . . .  	L BYTE	0094	_DATA
+HEADER6  . . . . . . . . . . . .  	L BYTE	00B9	_DATA
+HEADER7  . . . . . . . . . . . .  	L BYTE	00DF	_DATA
+HOME . . . . . . . . . . . . . .  	L NEAR	0057	_TEXT
+
+INMSG  . . . . . . . . . . . . .  	L NEAR	0042	_TEXT
+INVALID  . . . . . . . . . . . .  	L BYTE	0493	_DATA
+INVALID_MEAL . . . . . . . . . .  	L BYTE	07A4	_DATA
+IN_USERID  . . . . . . . . . . .  	L BYTE	04C0	_DATA	Length = 0005
+
+JUMPER . . . . . . . . . . . . .  	L NEAR	0228	_TEXT
+JUMPER1  . . . . . . . . . . . .  	L NEAR	0429	_TEXT
+JUMPER2  . . . . . . . . . . . .  	L NEAR	042C	_TEXT
+JUMPER3  . . . . . . . . . . . .  	L NEAR	042F	_TEXT
+JUMPER4  . . . . . . . . . . . .  	L NEAR	0432	_TEXT
+JUMPER5  . . . . . . . . . . . .  	L NEAR	0435	_TEXT
+JUMPER6  . . . . . . . . . . . .  	L NEAR	0438	_TEXT
+
+L0 . . . . . . . . . . . . . . .  	L NEAR	01A6	_TEXT
+L1 . . . . . . . . . . . . . . .  	L NEAR	01B0	_TEXT
+L2 . . . . . . . . . . . . . . .  	L NEAR	01C4	_TEXT
+L3 . . . . . . . . . . . . . . .  	L NEAR	01D8	_TEXT
+L4 . . . . . . . . . . . . . . .  	L NEAR	01EC	_TEXT
+L5 . . . . . . . . . . . . . . .  	L NEAR	0200	_TEXT
+L6 . . . . . . . . . . . . . . .  	L NEAR	0214	_TEXT
+
+MAIN . . . . . . . . . . . . . .  	F PROC	0000	_TEXT	Length = 05EE
+MCUST  . . . . . . . . . . . . .  	L BYTE	0749	_DATA	Length = 000A
+MEAL1  . . . . . . . . . . . . .  	L BYTE	081F	_DATA
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Symbols-3
+
+
+MEAL2  . . . . . . . . . . . . .  	L BYTE	0854	_DATA
+MEAL3  . . . . . . . . . . . . .  	L BYTE	0886	_DATA
+MEAL4  . . . . . . . . . . . . .  	L BYTE	08B8	_DATA
+MEAL5  . . . . . . . . . . . . .  	L BYTE	08E1	_DATA
+MEAL6  . . . . . . . . . . . . .  	L BYTE	0906	_DATA
+MNAME1 . . . . . . . . . . . . .  	L BYTE	0573	_DATA
+MNAME2 . . . . . . . . . . . . .  	L BYTE	0596	_DATA
+MNAME3 . . . . . . . . . . . . .  	L BYTE	05C3	_DATA
+MNAME4 . . . . . . . . . . . . .  	L BYTE	05E9	_DATA
+MNAME5 . . . . . . . . . . . . .  	L BYTE	060E	_DATA
+MNAME6 . . . . . . . . . . . . .  	L BYTE	062A	_DATA
+MSECTION1  . . . . . . . . . . .  	L BYTE	04C5	_DATA
+MSECTION2  . . . . . . . . . . .  	L BYTE	0517	_DATA
+MSECTION3  . . . . . . . . . . .  	L BYTE	053E	_DATA
+MSG  . . . . . . . . . . . . . .  	L NEAR	0253	_TEXT
+
+NORUN  . . . . . . . . . . . . .  	L NEAR	027E	_TEXT
+
+ORDERED1 . . . . . . . . . . . .  	L NEAR	0577	_TEXT
+ORDERED2 . . . . . . . . . . . .  	L NEAR	058A	_TEXT
+ORDERED3 . . . . . . . . . . . .  	L NEAR	059D	_TEXT
+ORDERED4 . . . . . . . . . . . .  	L NEAR	05B0	_TEXT
+ORDERED5 . . . . . . . . . . . .  	L NEAR	05C3	_TEXT
+ORDERED6 . . . . . . . . . . . .  	L NEAR	05D6	_TEXT
+ORDNAME1 . . . . . . . . . . . .  	L BYTE	07F4	_DATA
+ORDNAME2 . . . . . . . . . . . .  	L BYTE	0820	_DATA
+ORDNAME3 . . . . . . . . . . . .  	L BYTE	0855	_DATA
+ORDNAME4 . . . . . . . . . . . .  	L BYTE	0887	_DATA
+ORDNAME5 . . . . . . . . . . . .  	L BYTE	08B9	_DATA
+ORDNAME6 . . . . . . . . . . . .  	L BYTE	08E2	_DATA
+ORDQTY1  . . . . . . . . . . . .  	L BYTE	080F	_DATA	Length = 0010
+ORDQTY2  . . . . . . . . . . . .  	L BYTE	0844	_DATA	Length = 0010
+ORDQTY3  . . . . . . . . . . . .  	L BYTE	0876	_DATA	Length = 0010
+ORDQTY4  . . . . . . . . . . . .  	L BYTE	08A8	_DATA	Length = 0010
+ORDQTY5  . . . . . . . . . . . .  	L BYTE	08D1	_DATA	Length = 0010
+ORDQTY6  . . . . . . . . . . . .  	L BYTE	08F6	_DATA	Length = 0010
+
+QTY1 . . . . . . . . . . . . . .  	L BYTE	080E	_DATA
+QTY2 . . . . . . . . . . . . . .  	L BYTE	0843	_DATA
+QTY3 . . . . . . . . . . . . . .  	L BYTE	0875	_DATA
+QTY4 . . . . . . . . . . . . . .  	L BYTE	08A7	_DATA
+QTY5 . . . . . . . . . . . . . .  	L BYTE	08D0	_DATA
+QTY6 . . . . . . . . . . . . . .  	L BYTE	08F5	_DATA
+
+R1 . . . . . . . . . . . . . . .  	L BYTE	090E	_DATA
+R2 . . . . . . . . . . . . . . .  	L BYTE	090F	_DATA
+R3 . . . . . . . . . . . . . . .  	L BYTE	0910	_DATA
+R4 . . . . . . . . . . . . . . .  	L BYTE	0911	_DATA
+RATTEMPT . . . . . . . . . . . .  	L BYTE	09DF	_DATA
+RCLOSE . . . . . . . . . . . . .  	L BYTE	0A78	_DATA
+RGREET . . . . . . . . . . . . .  	L BYTE	09AD	_DATA
+RLINE1 . . . . . . . . . . . . .  	L BYTE	09F5	_DATA
+RM . . . . . . . . . . . . . . .  	L BYTE	0914	_DATA
+RTHANK . . . . . . . . . . . . .  	L BYTE	0A47	_DATA
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:16:36
+Food & Beverage Ordering System		; TITLE directive          Symbols-4
+
+
+RTITLE . . . . . . . . . . . . .  	L BYTE	0959	_DATA
+RTOTAL . . . . . . . . . . . . .  	L BYTE	0949	_DATA	Length = 0010
+RUN  . . . . . . . . . . . . . .  	L NEAR	0145	_TEXT
+
+SKIP . . . . . . . . . . . . . .  	L NEAR	043B	_TEXT
+SST1 . . . . . . . . . . . . . .  	L BYTE	090C	_DATA
+SST2 . . . . . . . . . . . . . .  	L BYTE	090D	_DATA
+SUBTOTAL . . . . . . . . . . . .  	L BYTE	0907	_DATA
+
+TAKEORDER  . . . . . . . . . . .  	L BYTE	0753	_DATA
+TATTEMPT . . . . . . . . . . . .  	L BYTE	0ACB	_DATA	Length = 0010
+TAX  . . . . . . . . . . . . . .  	L BYTE	0908	_DATA
+TEMP . . . . . . . . . . . . . .  	L BYTE	079D	_DATA
+TEMP1  . . . . . . . . . . . . .  	L BYTE	0912	_DATA
+TEMP2  . . . . . . . . . . . . .  	L BYTE	0913	_DATA
+TOEXIT . . . . . . . . . . . . .  	L NEAR	0462	_TEXT
+TOTAL  . . . . . . . . . . . . .  	L BYTE	0909	_DATA
+TOTAL1 . . . . . . . . . . . . .  	L BYTE	0938	_DATA
+TTAX . . . . . . . . . . . . . .  	L BYTE	0925	_DATA
+TXT  . . . . . . . . . . . . . .  	L BYTE	0457	_DATA
+
+USER_ID  . . . . . . . . . . . .  	L BYTE	047A	_DATA
+
+VALID  . . . . . . . . . . . . .  	L BYTE	04AA	_DATA
+
+@CODE  . . . . . . . . . . . . .  	TEXT  _TEXT		
+@CODESIZE  . . . . . . . . . . .  	TEXT  0		
+@DATASIZE  . . . . . . . . . . .  	TEXT  0		
+@FILENAME  . . . . . . . . . . .  	TEXT  MCD		
+
+
+   1083 Source  Lines
+   1083 Total   Lines
+    170 Symbols
+
+  50458 + 416934 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors

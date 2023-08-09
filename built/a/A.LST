@@ -1,0 +1,68 @@
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:06:31
+                                                             Page     1-1
+
+
+       1				.model small 
+       2 0064				.stack 100 
+       3 0000				.data 
+       4				 
+       5 0000  0D 0A 54 68 69 73 20	a db 0dh, 0ah, "This is my first debug 
+					program!" 
+       6       69 73 20 6D 79 20 66	
+       7       69 72 73 74 20 64 65	
+       8       62 75 67 20 70 72 6F	
+       9       67 72 61 6D 21		
+      10 0021  0D 0A 24			b db 0dh, 0ah,"$" 
+      11				 
+      12 0000				.code 
+      13 0000				main proc 
+      14 0000  B8 ---- R		mov ax,@data 
+      15 0003  8E D8			mov ds,ax 
+      16				 
+      17 0005  B4 09			mov ah,9 
+      18 0007  8D 16 0000 R		lea dx, a 
+      19 000B  CD 21			int 21h 
+      20				 
+      21				 
+      22 000D  B8 4C00			mov ax,4c00h 
+      23 0010  CD 21			int 21h 
+      24				 
+      25 0012				main endp 
+      26 0012				end main 
+Microsoft (R) Macro Assembler Version 5.00                  8/9/23 15:06:31
+                                                             Symbols-1
+
+
+Segments and Groups:
+
+                N a m e         	Length	 Align	Combine Class
+
+DGROUP . . . . . . . . . . . . .  	GROUP
+  _DATA  . . . . . . . . . . . .  	0024	WORD	PUBLIC	'DATA'
+  STACK  . . . . . . . . . . . .  	0064	PARA	STACK	'STACK'
+_TEXT  . . . . . . . . . . . . .  	0012	WORD	PUBLIC	'CODE'
+
+Symbols:            
+
+                N a m e         	Type	 Value	 Attr
+
+A  . . . . . . . . . . . . . . .  	L BYTE	0000	_DATA
+
+B  . . . . . . . . . . . . . . .  	L BYTE	0021	_DATA
+
+MAIN . . . . . . . . . . . . . .  	N PROC	0000	_TEXT	Length = 0012
+
+@CODE  . . . . . . . . . . . . .  	TEXT  _TEXT		
+@CODESIZE  . . . . . . . . . . .  	TEXT  0		
+@DATASIZE  . . . . . . . . . . .  	TEXT  0		
+@FILENAME  . . . . . . . . . . .  	TEXT  a		
+
+
+     22 Source  Lines
+     22 Total   Lines
+     17 Symbols
+
+  50610 + 465934 Bytes symbol space free
+
+      0 Warning Errors
+      0 Severe  Errors

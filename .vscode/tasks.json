@@ -1,0 +1,25 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+
+    "options": {
+        "env": {
+            "dosbox_path": "C:\\Program Files (x86)\\DOSBox-0.74-3"
+        }    
+    },
+
+    "tasks": [
+        {
+            "label": "Build ASM",
+            "type": "process",
+            "command": "./.vscode/buildASM.bat",
+            "args": ["C:\\Program Files (x86)\\DOSBox-0.74-3\\DOSBox.exe", "${fileBasenameNoExtension}", "${relativeFile}", "${relativeFileDirname}"],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
