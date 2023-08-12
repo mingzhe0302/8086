@@ -3,7 +3,7 @@
 .data
 	
     data1 db 'MILK', '$'
-    data2 db 4 dup ('*'), '$'
+    data2 db 4 dup('*'), '$'
 
     var1 db 'data1: ', '$'
     var2 db 'data2: ', '$'
@@ -11,7 +11,7 @@
     var3 db 'Initial content', '$'
     var4 db 'After Replacement', '$'
 
-	len db 04h
+	LEN db 04h
 .code
 
 
@@ -20,6 +20,7 @@ MAIN PROC
     MOV AX, @DATA
     MOV DS, AX
 
+    MOV ES,AX      
     lea SI, data1
     lea DI, data2
 
@@ -72,15 +73,15 @@ MAIN PROC
     mov ah, 09h
     lea dx, var2
     int 21H
-
     CLD         ;clear direction flag
     mov ch, 00h
-    mov cl, len
+    mov cl, LEN
     rep movsb
-
     mov ah, 09h
     lea dx, data2
     int 21H
+
+    call NEWLINE
 
 	;exit
     MOV AH, 4CH
