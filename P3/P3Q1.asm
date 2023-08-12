@@ -3,7 +3,7 @@
 .data
 	
     data1 db 'MILK', '$'
-    data2 db 4 dup('*'), '$'
+    data2 db '****', '$'
 
     var1 db 'data1: ', '$'
     var2 db 'data2: ', '$'
