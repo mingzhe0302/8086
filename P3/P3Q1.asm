@@ -1,6 +1,6 @@
-.MODEL SMALL
-.STACK 100H
-.DATA 
+.model small
+.stack 100h
+.data
 	
     data1 db 'MILK', '$'
     data2 db '****', '$'
@@ -12,7 +12,7 @@
     var4 db 'After Replacement', '$'
 
 	
-.CODE 
+.code
 
 
 MAIN PROC                               
@@ -21,7 +21,7 @@ MAIN PROC
     MOV DS, AX
 
     ;display initial content
-    lea dx, data3
+    lea dx, var3
     mov ah, 09h
     int 21H
     
@@ -48,5 +48,7 @@ NEWLINE PROC
     int 21H
 
     ret         ;return to the calling mode
+    
+NEWLINE ENDP
                                        
 END MAIN
